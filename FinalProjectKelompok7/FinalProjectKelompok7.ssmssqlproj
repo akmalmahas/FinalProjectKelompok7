@@ -3,7 +3,19 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="LAPTOP-QHO09EBD:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="AKMAL:AKMAL\ACER">
+          <Created>2024-05-31T15:57:30.8900914+07:00</Created>
+          <Type>SQL</Type>
+          <Server>AKMAL</Server>
+          <UserName />
+          <Authentication>Windows Authentication</Authentication>
+          <InitialDB />
+          <LoginTimeout>30</LoginTimeout>
+          <ExecutionTimeout>0</ExecutionTimeout>
+          <ConnectionProtocol>NotSpecified</ConnectionProtocol>
+          <ApplicationName />
+        </ConnectionNode>
+        <ConnectionNode Name="LAPTOP-QHO09EBD:AKMAL\ACER">
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -24,12 +36,6 @@
           <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Initial.sql</FullPath>
-        </FileNode>
-        <FileNode Name="test.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
-          <AssociatedConnUserName />
-          <FullPath>test.sql</FullPath>
         </FileNode>
       </Items>
     </LogicalFolder>

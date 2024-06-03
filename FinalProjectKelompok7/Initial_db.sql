@@ -7,7 +7,6 @@ CREATE TABLE tbl_regions (
 	name varchar (25) not null,
 );
 
-
 --COUNTRIES
 CREATE TABLE tbl_countries(
 	id CHAR (3) PRIMARY KEY,
@@ -103,18 +102,21 @@ CREATE TABLE tbl_employees(
 	department int not null
 );
 
---Pembuatan Foreign Key
-ALTER TABLE tbl_countries ADD FOREIGN KEY(region) REFERENCES tbl_regions(id);
-ALTER TABLE tbl_locations ADD FOREIGN KEY(country) REFERENCES tbl_countries(id);
-ALTER TABLE tbl_departments ADD FOREIGN KEY (locations) REFERENCES tbl_locations(id);
-ALTER TABLE tbl_job_histories ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
-ALTER TABLE tbl_employees ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
-ALTER TABLE tbl_job_histories ADD FOREIGN KEY(employee) REFERENCES tbl_employees(id);
-ALTER TABLE tbl_job_histories ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
-ALTER TABLE tbl_employees ADD FOREIGN KEY(manager) REFERENCES tbl_employees(id);
-ALTER TABLE tbl_employees ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
-ALTER TABLE tbl_accounts ADD FOREIGN KEY(id) REFERENCES tbl_employees(id);
-ALTER TABLE tbl_account_roles ADD FOREIGN KEY(account) REFERENCES tbl_account_roles(id);
-ALTER TABLE tbl_account_roles ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);
-ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(permission) REFERENCES tbl_permissions(id);
-ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);
+
+
+--update Foreign Key
+
+ALTER TABLE [dbo].[tbl_countries]  WITH CHECK ADD FOREIGN KEY([region])
+REFERENCES [dbo].[tbl_regions] ([id]);
+
+ALTER TABLE [dbo].[tbl_locations]  WITH CHECK ADD FOREIGN KEY([country])
+REFERENCES [dbo].[tbl_countries] ([id]);
+
+ALTER TABLE [dbo].[tbl_departments]  WITH CHECK ADD FOREIGN KEY([locations])
+REFERENCES [dbo].[tbl_locations] ([id]);
+
+ALTER TABLE [dbo].[tbl_employees]  WITH CHECK ADD FOREIGN KEY([department])
+REFERENCES [dbo].[tbl_departments] ([id]);
+
+ALTER TABLE [dbo].[tbl_accounts]  WITH CHECK ADD FOREIGN KEY([id])
+REFERENCES [dbo].[tbl_employees] ([id]);

@@ -114,3 +114,6 @@ ALTER TABLE tbl_account_roles ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);
 ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(permission) REFERENCES tbl_permissions(id); 
 ALTER TABLE tbl_job_histories ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
 ALTER TABLE tbl_job_histories ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
+ALTER TABLE tbl_employees ADD FOREIGN KEY(manager) REFERENCES tbl_employees(id);
+ALTER TABLE tbl_employees ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
+ALTER TABLE tbl_employees ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);

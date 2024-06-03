@@ -106,7 +106,7 @@ CREATE TABLE tbl_employees(
 --Pembuatan Foreign Key
 ALTER TABLE tbl_countries ADD FOREIGN KEY(region) REFERENCES tbl_regions(id);
 ALTER TABLE tbl_locations ADD FOREIGN KEY(country) REFERENCES tbl_countries(id);
-ALTER TABLE tbl_departments ADD FOREIGN KEY(location) REFERENCES tbl_locations(id);
+ALTER TABLE tbl_departments ADD FOREIGN KEY (locations) REFERENCES tbl_locations(id);
 ALTER TABLE tbl_job_histories ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
 ALTER TABLE tbl_employees ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
 ALTER TABLE tbl_job_histories ADD FOREIGN KEY(employee) REFERENCES tbl_employees(id);

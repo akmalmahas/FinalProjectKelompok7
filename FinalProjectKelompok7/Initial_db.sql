@@ -120,3 +120,15 @@ REFERENCES [dbo].[tbl_departments] ([id]);
 
 ALTER TABLE [dbo].[tbl_accounts]  WITH CHECK ADD FOREIGN KEY([id])
 REFERENCES [dbo].[tbl_employees] ([id]);
+
+ALTER TABLE [dbo].[tbl_account_roles]  WITH CHECK ADD FOREIGN KEY([account])
+REFERENCES [dbo].[tbl_accounts] ([id]);
+
+ALTER TABLE [dbo].[tbl_account_roles]  WITH CHECK ADD FOREIGN KEY([role])
+REFERENCES [dbo].[tbl_roles] ([id]);
+
+ALTER TABLE [dbo].[tbl_role_permissions]  WITH CHECK ADD FOREIGN KEY([role])
+REFERENCES [dbo].[tbl_roles] ([id]);
+
+ALTER TABLE [dbo].[tbl_role_permissions]  WITH CHECK ADD FOREIGN KEY([permission])
+REFERENCES [dbo].[tbl_permissions] ([id]);

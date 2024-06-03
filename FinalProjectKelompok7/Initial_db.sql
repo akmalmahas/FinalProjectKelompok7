@@ -103,7 +103,6 @@ CREATE TABLE tbl_employees(
 );
 
 
-
 --update Foreign Key
 
 ALTER TABLE [dbo].[tbl_countries]  WITH CHECK ADD FOREIGN KEY([region])
@@ -132,3 +131,18 @@ REFERENCES [dbo].[tbl_roles] ([id]);
 
 ALTER TABLE [dbo].[tbl_role_permissions]  WITH CHECK ADD FOREIGN KEY([permission])
 REFERENCES [dbo].[tbl_permissions] ([id]);
+
+ALTER TABLE [dbo].[tbl_job_histories]  WITH CHECK ADD FOREIGN KEY([job])
+REFERENCES [dbo].[tbl_jobs] ([id]);
+
+ALTER TABLE [dbo].[tbl_job_histories]  WITH CHECK ADD FOREIGN KEY([employee])
+REFERENCES [dbo].[tbl_employees] ([id]);
+
+ALTER TABLE [dbo].[tbl_job_histories]  WITH CHECK ADD FOREIGN KEY([department])
+REFERENCES [dbo].[tbl_departments] ([id]);
+
+ALTER TABLE [dbo].[tbl_employees]  WITH CHECK ADD FOREIGN KEY([job])
+REFERENCES [dbo].[tbl_jobs] ([id]);
+
+ALTER TABLE [dbo].[tbl_employees]  WITH CHECK ADD FOREIGN KEY([manager])
+REFERENCES [dbo].[tbl_employees] ([id]);

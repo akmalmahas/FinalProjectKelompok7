@@ -58,9 +58,9 @@ CREATE TABLE tbl_accounts(
 	id INT IDENTITY PRIMARY KEY,
 	username VARCHAR(25),
 	password VARCHAR(255) NOT NULL,
-	otp INT,
-	is_expired DATETIME,
-	is_used BIT
+	otp INT NOT NULL,
+	is_expired DATETIME NOT NULL,
+	is_used BIT NOT NULL
 );
 
 --PERMISSIONS
@@ -107,13 +107,14 @@ CREATE TABLE tbl_employees(
 ALTER TABLE tbl_countries ADD FOREIGN KEY(region) REFERENCES tbl_regions(id);
 ALTER TABLE tbl_locations ADD FOREIGN KEY(country) REFERENCES tbl_countries(id);
 ALTER TABLE tbl_departments ADD FOREIGN KEY(location) REFERENCES tbl_locations(id);
-ALTER TABLE tbl_job_histories ADD FOREIGN KEY(employee) REFERENCES tbl_employees(id);
-ALTER TABLE tbl_accounts ADD FOREIGN KEY(id) REFERENCES tbl_employees(id);
-ALTER TABLE tbl_account_roles ADD FOREIGN KEY(account) REFERENCES tbl_accounts_roles(id);
-ALTER TABLE tbl_account_roles ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);
-ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(permission) REFERENCES tbl_permissions(id); 
-ALTER TABLE tbl_job_histories ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
 ALTER TABLE tbl_job_histories ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
+ALTER TABLE tbl_employees ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
+ALTER TABLE tbl_job_histories ADD FOREIGN KEY(employee) REFERENCES tbl_employees(id);
+ALTER TABLE tbl_job_histories ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
 ALTER TABLE tbl_employees ADD FOREIGN KEY(manager) REFERENCES tbl_employees(id);
 ALTER TABLE tbl_employees ADD FOREIGN KEY(job) REFERENCES tbl_jobs(id);
-ALTER TABLE tbl_employees ADD FOREIGN KEY(department) REFERENCES tbl_departments(id);
+ALTER TABLE tbl_accounts ADD FOREIGN KEY(id) REFERENCES tbl_employees(id);
+ALTER TABLE tbl_account_roles ADD FOREIGN KEY(account) REFERENCES tbl_account_roles(id);
+ALTER TABLE tbl_account_roles ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);
+ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(permission) REFERENCES tbl_permissions(id);
+ALTER TABLE tbl_role_permissions ADD FOREIGN KEY(role) REFERENCES tbl_roles(id);

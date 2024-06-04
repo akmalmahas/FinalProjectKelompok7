@@ -4,7 +4,7 @@ CREATE PROCEDURE AddCountry
 	@region INT
 AS
 BEGIN
-    -- Menambahkan data ke tabel Region
+    -- Menambahkan data ke tabel Country
     INSERT INTO tbl_countries(id, name, region)
     VALUES (@id, @name, @region);
     

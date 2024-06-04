@@ -37,3 +37,18 @@ SELECT * FROM tbl_countries;
 EXEC DeleteCountry @id = 'USA';
 
 SELECT * FROM tbl_countries;
+
+--AddPermission 
+EXEC AddPermission	@name = 'GRANT UPDATE';
+
+SELECT * FROM tbl_permissions
+
+--EditPermission
+EXEC EditPermission @id = 1, @name = 'GRANT INSERT';
+
+SELECT * FROM tbl_permissions
+
+--DeletePermission
+EXEC DeletePermission @id = 1;
+
+SELect* from tbl_permissions

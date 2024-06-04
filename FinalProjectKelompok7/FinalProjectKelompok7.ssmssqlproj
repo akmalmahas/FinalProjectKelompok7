@@ -32,8 +32,13 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="Initial_db.sql">
+<<<<<<< Updated upstream
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+=======
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+>>>>>>> Stashed changes
           <AssociatedConnUserName />
           <FullPath>Initial_db.sql</FullPath>
         </FileNode>

@@ -61,6 +61,12 @@
           <AssociatedConnUserName />
           <FullPath>usp_AddCountry.sql</FullPath>
         </FileNode>
+        <FileNode Name="usp_AddJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>usp_AddJob.sql</FullPath>
+        </FileNode>
         <FileNode Name="usp_AddPermission.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
@@ -78,6 +84,12 @@
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_DeleteCountry.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_DeleteJob.sql">
+          <AssociatedConnectionMoniker />
+          <AssociatedConnSrvName />
+          <AssociatedConnUserName />
+          <FullPath>usp_DeleteJob.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_DeletePermission.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
@@ -102,6 +114,12 @@
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditCountry.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_EditJob.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_EditJob.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditPermission.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>

@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="AKMAL:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="AKMAL:AKMAL\ACER">
           <Created>2024-05-31T15:57:30.8900914+07:00</Created>
           <Type>SQL</Type>
           <Server>AKMAL</Server>
@@ -15,7 +15,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="LAPTOP-QHO09EBD:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="LAPTOP-QHO09EBD:AKMAL\ACER">
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -27,7 +27,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="MSI:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="MSI:AKMAL\ACER">
           <Created>2024-06-04T13:33:26.5500542+07:00</Created>
           <Type>SQL</Type>
           <Server>MSI</Server>
@@ -44,14 +44,14 @@
     <LogicalFolder Name="Queries" Type="0" Sorted="true">
       <Items>
         <FileNode Name="Initial_db.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Initial_db.sql</FullPath>
         </FileNode>
         <FileNode Name="trash.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>trash.sql</FullPath>
         </FileNode>
@@ -80,8 +80,8 @@
           <FullPath>usp_AddLocation.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddPermission.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddPermission.sql</FullPath>
         </FileNode>
@@ -116,14 +116,14 @@
           <FullPath>usp_DeleteJob.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_DeleteLocation.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_DeleteLocation.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_DeletePermission.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_DeletePermission.sql</FullPath>
         </FileNode>
@@ -134,8 +134,8 @@
           <FullPath>usp_DeleteRegion.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_DeleteRole.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_DeleteRole.sql</FullPath>
         </FileNode>
@@ -158,8 +158,8 @@
           <FullPath>usp_EditJob.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditLocation.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditLocation.sql</FullPath>
         </FileNode>
@@ -170,14 +170,14 @@
           <FullPath>usp_EditPermission.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditRegion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditRegion.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditRole.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditRole.sql</FullPath>
         </FileNode>

@@ -71,3 +71,18 @@ EXEC DeleteJob @id = 'Engineer';
 
 SELECT * FROM tbl_jobs;
 
+--AddRoles
+EXEC AddRole  @name = 'db_owner';
+
+SELECT * FROM tbl_roles
+
+--EditRole
+EXEC EditRole @id = 1, @name = 'db_accessadmin';
+
+SELECT * FROM tbl_roles
+
+--DeleteRole
+EXEC DeleteRole @id = 1;
+
+SELECT * FROM tbl_roles
+

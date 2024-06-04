@@ -1,5 +1,5 @@
 CREATE PROCEDURE DeleteRegion
-    @id VARCHAR(25)
+    @id INT
 AS
 BEGIN
     -- Menghapus data dari tabel Region

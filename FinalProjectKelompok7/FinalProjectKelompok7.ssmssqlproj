@@ -50,8 +50,8 @@
           <FullPath>Initial_db.sql</FullPath>
         </FileNode>
         <FileNode Name="trash.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>trash.sql</FullPath>
         </FileNode>
@@ -68,8 +68,8 @@
           <FullPath>usp_AddPermission.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddRegion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddRegion.sql</FullPath>
         </FileNode>

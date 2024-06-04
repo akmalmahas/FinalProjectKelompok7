@@ -25,4 +25,4 @@ EXEC AddRegion @name = 'Africa';
 SELECT @NewID = SCOPE_IDENTITY();
 SELECT @NewID AS IDBaru;
 
-DBCC CHECKIDENT ('tbl_regions', RESEED, 1);
+DBCC CHECKIDENT ('tbl_regions', RESEED, 0);

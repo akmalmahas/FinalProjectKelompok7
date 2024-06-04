@@ -86,3 +86,34 @@ EXEC DeleteRole @id = 1;
 
 SELECT * FROM tbl_roles
 
+--AddLocation
+EXEC AddLocation @street_address= 'Jalan Perjuangan 1', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
+
+SELECT * FROM tbl_locations;
+
+--EditLocation
+EXEC EditLocation @id=1, @street_address= 'Jalan Perjuangan 2', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
+EXEC EditLocation @id=1, @postal_code='20101';
+
+SELECT * FROM tbl_locations;
+
+--DeleteLocation
+EXEC Deletelocation @id = '1';
+
+SELECT * FROM tbl_locations;
+
+--AddDepartment
+EXEC AddDepartment @name = 'Engineering', @locations = 1; 
+
+SELECT * FROM tbl_departments;
+
+--EditDepartment
+EXEC EditDepartment @id = 2, @name = 'Officer', @locations=6;
+
+SELECT * from tbl_departments;
+
+--Delete Department
+EXEC DeleteDepartment @id = '2';
+
+SELECT * FROM tbl_departments;
+

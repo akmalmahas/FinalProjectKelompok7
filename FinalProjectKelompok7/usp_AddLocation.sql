@@ -7,7 +7,7 @@ CREATE PROCEDURE AddLocation
 AS
 BEGIN
     -- Menambahkan data ke tabel Location
-    INSERT INTO tbl_locations(street_address, postal_code, city, state_province, country)
+    INSERT INTO tbl_locations (street_address, postal_code, city, state_province, country)
     VALUES (@street_address, @postal_code, @city, @state_province, @country);
     
     -- Mengembalikan pesan keberhasilan

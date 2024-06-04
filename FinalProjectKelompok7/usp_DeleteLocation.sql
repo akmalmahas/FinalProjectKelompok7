@@ -8,6 +8,6 @@ BEGIN
 END;
 
 --exec
-EXEC Deletelocation @id = '1';
+EXEC DeleteLocation @id = '1';
 
 SELECT * FROM tbl_locations;

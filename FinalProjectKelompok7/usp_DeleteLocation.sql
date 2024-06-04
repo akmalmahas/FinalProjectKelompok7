@@ -1,4 +1,4 @@
-CREATE PROCEDURE Deletelocation
+CREATE PROCEDURE DeleteLocation
     @id int
 AS
 BEGIN

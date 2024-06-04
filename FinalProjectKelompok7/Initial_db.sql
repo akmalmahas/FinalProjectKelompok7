@@ -102,7 +102,6 @@ CREATE TABLE tbl_employees(
 	department int not null
 );
 
-
 --update Foreign Key
 
 ALTER TABLE [dbo].[tbl_countries]  WITH CHECK ADD FOREIGN KEY([region])
@@ -146,3 +145,5 @@ REFERENCES [dbo].[tbl_jobs] ([id]);
 
 ALTER TABLE [dbo].[tbl_employees]  WITH CHECK ADD FOREIGN KEY([manager])
 REFERENCES [dbo].[tbl_employees] ([id]);
+=======
+

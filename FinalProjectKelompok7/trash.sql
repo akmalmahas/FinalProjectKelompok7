@@ -53,3 +53,21 @@ EXEC DeletePermission @id = 1;
 
 SELect* from tbl_permissions
 
+--Add Job
+EXEC AddJob @id = 'Engineer', @title = 'Software Engineer', @min_salary = 2500000, @max_salary = 10000000;
+EXEC AddJob @id = 'Manager', @title = 'Project Manager', @min_salary = 5000000, @max_salary = 18000000; 
+
+SELECT * FROM tbl_jobs;
+
+--Edit Job
+EXEC EditJob @id = 'Engineer', @title = 'Software Engineer', @min_salary = 3000000, @max_salary = 10000000;
+EXEC EditJob @id = 'Engineer', @title = 'Software Engineer', @max_salary = 25000000;
+EXEC EditJob @id = 'Engineer', @title = 'Data Engineer';
+
+SELECT * FROM tbl_jobs;
+
+--Delete Job
+EXEC DeleteJob @id = 'Engineer';
+
+SELECT * FROM tbl_jobs;
+

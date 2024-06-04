@@ -52,3 +52,4 @@ SELECT * FROM tbl_permissions
 EXEC DeletePermission @id = 1;
 
 SELect* from tbl_permissions
+

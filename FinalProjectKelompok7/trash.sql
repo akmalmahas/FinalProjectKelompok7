@@ -115,6 +115,11 @@ SELECT * from tbl_departments;
 --Delete Department
 EXEC DeleteDepartment @id = '2';
 
+--EXEC DELETE Employee
+EXEC DeleteEmployee @id = '3';
+
+SELECT * FROM tbl_employees;
+
 SELECT * FROM tbl_departments;
 
 --VIEW

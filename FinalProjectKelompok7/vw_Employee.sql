@@ -8,4 +8,3 @@ SELECT
 FROM tbl_employees e
 INNER JOIN tbl_jobs j ON j.id = e.job
 INNER JOIN tbl_departments d ON d.id = e.department;
-

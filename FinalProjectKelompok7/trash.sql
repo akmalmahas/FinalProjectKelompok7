@@ -117,3 +117,9 @@ EXEC DeleteDepartment @id = '2';
 
 SELECT * FROM tbl_departments;
 
+--VIEW
+SELECT * FROM vw_Region;
+
+SELECT * FROM vw_Job;
+
+SELECT * FROM vw_Department;

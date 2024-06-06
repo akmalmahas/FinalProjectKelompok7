@@ -123,15 +123,44 @@ SELECT * FROM tbl_employees;
 SELECT * FROM tbl_departments;
 
 --Add Employee
-EXECUTE Register @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
-                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 50000, @manager = null,
+
+
+EXECUTE AddEmployee @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
+                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 8000000, @manager = null,
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
 
-EXECUTE Register @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
+EXECUTE AddEmployee @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
                     @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
 
+EXECUTE AddEmployee @first_name = 'Akmal', @last_name = 'Mahasna', @gender = 'Male', @email = 'akmal@gmail.com',
+                    @phone = '088823212', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+EXECUTE AddEmployee @first_name = 'Ragil', @last_name = 'Ramadhan', @gender = 'Male', @email = 'ragil@gmail.com',
+                    @phone = '088823219', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male', @email = 'hnf@gmail.com',
+                    @phone = '0213232', @hire_date = '2024-12-11', @salary = 10000000, @manager = 1,
+                    @job = 'Manager', @department = 5, @password = 'hanhan12', @confirm_password = 'hanhan12';
+
+select * from  tbl_employees;
+select * from tbl_accounts
+select * from tbl_jobs
+select * from tbl_departments
+select * from tbl_job_histories
+
+
+delete from tbl_employees where id >=1;
+delete from tbl_accounts where id >=1;
+ 
+ DBCC CHECKIDENT ('tbl_employees', RESEED, 0);
+ DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
+
+
 --Edit Employee
+
 EXECUTE EditEmployee @id='1', @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
                     @phone = '1234567890', @hire_date = '2024-06-10', @salary = 50000, @manager = null,
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
@@ -141,6 +170,13 @@ EXECUTE EditEmployee id='2', @first_name = 'Zidan', @last_name = 'Akmal', @gende
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
 
 EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny123@gmail.com' --,@gender = 'laki-laki';
+
+EXECUTE EditEmployee @id='3', @manager=3, @salary=1900000;
+
+EXECUTE EditEmployee @id='2', @email= 'zidan@gmail.com';
+
+select * from  tbl_employees;
+select * from tbl_accounts;
 
 --EXEC DELETE Employee
 EXEC DeleteEmployee @id = '3';
@@ -153,7 +189,11 @@ SELECT * FROM tbl_employees;
 SELECT * FROM tbl_departments;
 
 --Edit Profile
+EXEC EditProfile @id =2, @username ='zidan1@gmail.com', @email='zidan1@gmail.com';
+EXEC EditProfile @id =5, @username ='hanifuyee1', @email='nif@gmail.com';
 
+SELECT * FROM tbl_accounts;
+SELECT * FROM tbl_employees;
 
 
 --VIEW

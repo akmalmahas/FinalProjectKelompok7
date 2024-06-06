@@ -48,6 +48,18 @@ BEGIN
         RETURN;
     END
 
+	-- Validasi Salary
+	IF @salary IS NOT NULL
+    BEGIN
+        DECLARE @min_salary INT, @max_salary INT;
+        SELECT @min_salary = min_salary, @max_salary = max_salary FROM tbl_jobs WHERE id = COALESCE(@job, (SELECT job FROM tbl_employees WHERE id = @id));
+        IF @salary < @min_salary OR @salary > @max_salary
+        BEGIN
+            THROW 60007, 'Salary should be between the job''s min_salary and max_salary.', 1;
+            RETURN;
+        END
+    END
+
     -- Memperbarui data di tabel Employees
     UPDATE tbl_employees
     SET 
@@ -78,4 +90,9 @@ EXECUTE EditEmployee id='2', @first_name = 'Zidan', @last_name = 'Akmal', @gende
 
 EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny123@gmail.com' --,@gender = 'laki-laki';
 
+EXECUTE EditEmployee @id='3', @manager=3, @salary=1900000;
+
+EXECUTE EditEmployee @id='2', @email= 'zidan@gmail.com';
+
 select * from  tbl_employees;
+select * from tbl_accounts;

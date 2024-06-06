@@ -122,10 +122,54 @@ SELECT * FROM tbl_employees;
 
 SELECT * FROM tbl_departments;
 
+--Add Employee
+EXECUTE Register @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
+                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 50000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+EXECUTE Register @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
+                    @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+--Edit Employee
+EXECUTE EditEmployee @id='1', @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
+                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 50000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+EXECUTE EditEmployee id='2', @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
+                    @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
+                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+
+EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny123@gmail.com' --,@gender = 'laki-laki';
+
+--EXEC DELETE Employee
+EXEC DeleteEmployee @id = '3';
+
+--CHANGE PASSWORD
+EXEC ChangePassword @email = 'Johny123@gmail.com', @password = 'akmal123', @new_password = 'akmal1234', @confirm_password = 'akmal1234';
+
+SELECT * FROM tbl_employees;
+
+SELECT * FROM tbl_departments;
+
+--Edit Profile
+
+
+
 --VIEW
 SELECT * FROM vw_Region;
 
 SELECT * FROM vw_Job;
 
 SELECT * FROM vw_Department;
+
+SELECT * FROM vw_Country;
+
+SELECT * FROM vw_Location;
+
+SELECT * FROM vw_Role;
+
+SELECT * FROM vw_Permission;
+
+SELECT * FROM vw_Employee;
 

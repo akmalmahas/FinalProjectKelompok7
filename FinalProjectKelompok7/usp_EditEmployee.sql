@@ -76,5 +76,6 @@ EXECUTE EditEmployee id='2', @first_name = 'Zidan', @last_name = 'Akmal', @gende
                     @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
 
-EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny@gmail.com', --@gender = 'laki-laki';
+EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny123@gmail.com' --,@gender = 'laki-laki';
+
 select * from  tbl_employees;

@@ -98,7 +98,6 @@ END;
 
 
 
-
 EXECUTE AddEmployee @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
                     @phone = '1234567890', @hire_date = '2024-06-10', @salary = 8000000, @manager = null,
                     @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
@@ -121,16 +120,19 @@ EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male
 
 select * from  tbl_employees;
 select * from tbl_accounts
-select * from tbl_jobs
-select * from tbl_departments
 select * from tbl_job_histories
 
+select * from tbl_jobs
+select * from tbl_departments
 
-delete from tbl_employees where id >=1;
+delete from tbl_job_histories where employee >=1;
 delete from tbl_accounts where id >=1;
+delete from tbl_employees where id >=1;
+
  
  DBCC CHECKIDENT ('tbl_employees', RESEED, 0);
  DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
+ DBCC CHECKIDENT ('tbl_job_histories', RESEED, 0);
 
 
 

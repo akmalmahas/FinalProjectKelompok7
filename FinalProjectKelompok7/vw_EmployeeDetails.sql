@@ -12,4 +12,4 @@ SELECT
 	department
 FROM tbl_employees
 
-SELECT * FROM vw_EmployeeDetail;
+SELECT * FROM vw_EmployeeDetails;

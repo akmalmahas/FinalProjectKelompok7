@@ -34,6 +34,13 @@ BEGIN
         RETURN;
     END
 
+	-- Validasi Password Policy
+	IF dbo.IsValidPasswordPolicy(@password) = 0
+	BEGIN
+		THROW 50007, 'Password does not meet the required policy.', 1;
+		RETURN;
+	END
+
     -- Validasi Confirm Password
     IF dbo.IsValidPassword(@password, @confirm_password) = 0
     BEGIN
@@ -100,19 +107,19 @@ END;
 
 EXECUTE AddEmployee @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
                     @phone = '1234567890', @hire_date = '2024-06-10', @salary = 8000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+                    @job = 'Manager', @department = 5, @password = 'Password1!', @confirm_password = 'Password1!';
 
 EXECUTE AddEmployee @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
                     @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+                    @job = 'Manager', @department = 5, @password = 'Z!d4nnnn', @confirm_password = 'Z!d4nnnn';
 
 EXECUTE AddEmployee @first_name = 'Akmal', @last_name = 'Mahasna', @gender = 'Male', @email = 'akmal@gmail.com',
                     @phone = '088823212', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+                    @job = 'Manager', @department = 5, @password = 'Akm4l@ja', @confirm_password = 'Akm4l@ja';
 
 EXECUTE AddEmployee @first_name = 'Ragil', @last_name = 'Ramadhan', @gender = 'Male', @email = 'ragil@gmail.com',
                     @phone = '088823219', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
+                    @job = 'Manager', @department = 5, @password = 'Ra9!l0990', @confirm_password = 'Ra9!l0990';
 
 EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male', @email = 'hnf@gmail.com',
                     @phone = '0213232', @hire_date = '2024-12-11', @salary = 10000000, @manager = 1,

@@ -27,6 +27,13 @@ BEGIN
     FROM tbl_accounts
     WHERE id = @id;
 
+	-- Validasi Password Policy
+	IF dbo.IsValidPasswordPolicy(@password) = 0
+	BEGIN
+		THROW 50007, 'Password does not meet the required policy.', 1;
+		RETURN;
+	END
+
     IF @currentpassword <> @password
     BEGIN
         -- Mengembalikan pesan kesalahan jika password lama tidak cocok
@@ -61,7 +68,7 @@ END;
 GO
 
 <<<<<<< Updated upstream
-EXEC ChangePassword @email = 'Johny123@gmail.com', @password = 'akmal123', @new_password = 'akmal1234', @confirm_password = 'akmal1234';
+EXEC ChangePassword @email = 'johnyyyy@example.com', @password = 'Password1!', @new_password = 'Johny123!', @confirm_password = 'Johny123!';
 
 SELECT * FROM tbl_accounts;
 SELECT * FROM tbl_employees;
@@ -70,3 +77,4 @@ EXEC ChangePassword @email = 'akmal@gmail.com', @password = 'password123', @new_
 
 select * from tbl_accounts
 >>>>>>> Stashed changes
+

@@ -12,7 +12,7 @@ BEGIN
     INSERT INTO tbl_job_histories (employee, start_date, end_date, status, job, department)
     SELECT 
         id, 
-        DATEADD(DAY, 7, hire_date), 
+        hire_date, 
         NULL, 
         'Active', 
         job, 
@@ -44,7 +44,7 @@ BEGIN
         d.id, 
         GETDATE(), -- Tanggal perubahan
         NULL, 
-        'Hand Over', 
+        'HAND OVER', 
         d.job, 
         d.department
     FROM 
@@ -60,4 +60,5 @@ END;
 
 
 
+DROP TRIGGER trg_AfterInsertEmployee;
 DROP TRIGGER trg_AfterUpdateEmployeeJob;

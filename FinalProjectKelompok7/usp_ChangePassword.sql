@@ -27,13 +27,6 @@ BEGIN
     FROM tbl_accounts
     WHERE id = @id;
 
-	-- Validasi Password Policy
-	IF dbo.IsValidPasswordPolicy(@password) = 0
-	BEGIN
-		THROW 50007, 'Password does not meet the required policy.', 1;
-		RETURN;
-	END
-
     IF @currentpassword <> @password
     BEGIN
         -- Mengembalikan pesan kesalahan jika password lama tidak cocok
@@ -49,11 +42,11 @@ BEGIN
         RETURN;
     END
 
-    -- Memanggil fungsi untuk memeriksa validitas password baru
-    IF dbo.IsValidPassword(@new_password, @confirm_password) = 0
+    -- Validasi Password Policy untuk password baru
+    IF dbo.IsValidPasswordPolicy(@new_password) = 0
     BEGIN
         -- Mengembalikan pesan kesalahan jika password baru tidak valid
-        SELECT 'New password does not meet the required criteria.' AS Message;
+        SELECT 'New password does not meet the required policy.' AS Message;
         RETURN;
     END
 
@@ -68,7 +61,8 @@ END;
 GO
 
 
-EXEC ChangePassword @email = 'johnyyyy@example.com', @password = 'Password1!', @new_password = 'Johny123!', @confirm_password = 'Johny123!';
+
+EXEC ChangePassword @email = 'johnyyyy@example.com', @password = 'Password1!', @new_password = '!Johny123', @confirm_password = '!Johny123';
 
 SELECT * FROM tbl_accounts;
 SELECT * FROM tbl_employees;

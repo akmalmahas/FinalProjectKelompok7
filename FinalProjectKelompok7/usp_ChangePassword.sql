@@ -67,7 +67,7 @@ BEGIN
 END;
 GO
 
-<<<<<<< Updated upstream
+
 EXEC ChangePassword @email = 'johnyyyy@example.com', @password = 'Password1!', @new_password = 'Johny123!', @confirm_password = 'Johny123!';
 
 SELECT * FROM tbl_accounts;
@@ -76,5 +76,4 @@ SELECT * FROM tbl_employees;
 EXEC ChangePassword @email = 'akmal@gmail.com', @password = 'password123', @new_password = 'akmal123456', @confirm_password = 'akmal123456';
 
 select * from tbl_accounts
->>>>>>> Stashed changes
 

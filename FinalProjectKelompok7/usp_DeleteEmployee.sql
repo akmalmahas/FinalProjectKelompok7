@@ -6,6 +6,10 @@ BEGIN
 
     BEGIN TRY
 
+	---- Hapus data dari tabel tbl_job_histories
+ --    DELETE FROM tbl_job_histories 
+ --    WHERE employee = @id;
+
      -- Hapus data dari tabel tbl_accounts
 	 DELETE FROM tbl_accounts 
 	 WHERE id = @id;
@@ -28,6 +32,6 @@ BEGIN
 END;
 
 --EXEC DELETE Employee
-EXEC DeleteEmployee @id = '5';
+EXEC DeleteEmployee @id = '1';
 
 SELECT * FROM tbl_employees;

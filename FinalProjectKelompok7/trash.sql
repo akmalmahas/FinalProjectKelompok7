@@ -213,3 +213,7 @@ SELECT * FROM vw_Permission;
 
 SELECT * FROM vw_Employee;
 
+--Hapus Trigger
+DROP TRIGGER trg_AfterInsertEmployee;
+DROP TRIGGER trg_AfterUpdateEmployeeJob;
+

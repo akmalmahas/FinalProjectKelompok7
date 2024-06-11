@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="AKMAL:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="AKMAL:AKMAL\ACER">
           <Created>2024-05-31T15:57:30.8900914+07:00</Created>
           <Type>SQL</Type>
           <Server>AKMAL</Server>
@@ -15,7 +15,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="LAPTOP-QHO09EBD:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="LAPTOP-QHO09EBD:AKMAL\ACER">
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -27,7 +27,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="MSI:LAPTOP-QHO09EBD\ZIDAN">
+        <ConnectionNode Name="MSI:AKMAL\ACER">
           <Created>2024-06-04T13:33:26.5500542+07:00</Created>
           <Type>SQL</Type>
           <Server>MSI</Server>
@@ -74,8 +74,8 @@
           <FullPath>func_IsValidPhoneNumber.sql</FullPath>
         </FileNode>
         <FileNode Name="Initial_db.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Initial_db.sql</FullPath>
         </FileNode>

@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="AKMAL:AKMAL\ACER">
+        <ConnectionNode Name="AKMAL:MSI\ragil ramadhan">
           <Created>2024-05-31T15:57:30.8900914+07:00</Created>
           <Type>SQL</Type>
           <Server>AKMAL</Server>
@@ -15,7 +15,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="LAPTOP-QHO09EBD:AKMAL\ACER">
+        <ConnectionNode Name="LAPTOP-QHO09EBD:MSI\ragil ramadhan">
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -27,7 +27,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="MSI:AKMAL\ACER">
+        <ConnectionNode Name="MSI:MSI\ragil ramadhan">
           <Created>2024-06-04T13:33:26.5500542+07:00</Created>
           <Type>SQL</Type>
           <Server>MSI</Server>
@@ -92,14 +92,14 @@
           <FullPath>tr_insert_Employee.sql</FullPath>
         </FileNode>
         <FileNode Name="tr_update_Employee.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>tr_update_Employee.sql</FullPath>
         </FileNode>
         <FileNode Name="trash.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>trash.sql</FullPath>
         </FileNode>
@@ -116,8 +116,8 @@
           <FullPath>usp_AddDepartment.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddEmployee.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddEmployee.sql</FullPath>
         </FileNode>
@@ -140,8 +140,8 @@
           <FullPath>usp_AddPermission.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddRegion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddRegion.sql</FullPath>
         </FileNode>
@@ -218,8 +218,8 @@
           <FullPath>usp_EditDepartment.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditEmployee.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditEmployee.sql</FullPath>
         </FileNode>

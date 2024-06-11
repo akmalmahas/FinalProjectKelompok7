@@ -3,7 +3,11 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
+<<<<<<< HEAD
         <ConnectionNode Name="AKMAL:MSI\ragil ramadhan">
+=======
+        <ConnectionNode Name="AKMAL:LAPTOP-QHO09EBD\ZIDAN">
+>>>>>>> parent of 994a098 (Merge branch 'main' of https://github.com/akmalmahas/FinalProjectKelompok7)
           <Created>2024-05-31T15:57:30.8900914+07:00</Created>
           <Type>SQL</Type>
           <Server>AKMAL</Server>
@@ -15,7 +19,11 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
+<<<<<<< HEAD
         <ConnectionNode Name="LAPTOP-QHO09EBD:MSI\ragil ramadhan">
+=======
+        <ConnectionNode Name="LAPTOP-QHO09EBD:LAPTOP-QHO09EBD\ZIDAN">
+>>>>>>> parent of 994a098 (Merge branch 'main' of https://github.com/akmalmahas/FinalProjectKelompok7)
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -27,7 +35,11 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
+<<<<<<< HEAD
         <ConnectionNode Name="MSI:MSI\ragil ramadhan">
+=======
+        <ConnectionNode Name="MSI:LAPTOP-QHO09EBD\ZIDAN">
+>>>>>>> parent of 994a098 (Merge branch 'main' of https://github.com/akmalmahas/FinalProjectKelompok7)
           <Created>2024-06-04T13:33:26.5500542+07:00</Created>
           <Type>SQL</Type>
           <Server>MSI</Server>
@@ -103,8 +115,13 @@
           <FullPath>tr_update_Employee.sql</FullPath>
         </FileNode>
         <FileNode Name="trash.sql">
+<<<<<<< HEAD
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+=======
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+>>>>>>> parent of 994a098 (Merge branch 'main' of https://github.com/akmalmahas/FinalProjectKelompok7)
           <AssociatedConnUserName />
           <FullPath>trash.sql</FullPath>
         </FileNode>
@@ -132,14 +149,14 @@
           <FullPath>usp_AddEmployee.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddJob.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddJob.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddLocation.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddLocation.sql</FullPath>
         </FileNode>
@@ -233,8 +250,13 @@
           <FullPath>usp_EditDepartment.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditEmployee.sql">
+<<<<<<< HEAD
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+=======
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+>>>>>>> parent of 994a098 (Merge branch 'main' of https://github.com/akmalmahas/FinalProjectKelompok7)
           <AssociatedConnUserName />
           <FullPath>usp_EditEmployee.sql</FullPath>
         </FileNode>

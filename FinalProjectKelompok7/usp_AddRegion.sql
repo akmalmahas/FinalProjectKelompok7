@@ -2,13 +2,21 @@ CREATE PROCEDURE AddRegion
     @name VARCHAR(25)
 AS
 BEGIN
-    -- Menambahkan data ke tabel Region
+    -- Menyisipkan data region baru ke dalam tabel
     INSERT INTO tbl_regions (name)
     VALUES (@name);
-    
-    -- Mengembalikan id dari record yang baru ditambahkan
-    SELECT SCOPE_IDENTITY() AS NewID;
+
+    -- Mengembalikan pesan keberhasilan atau kesalahan
+    IF @@ROWCOUNT > 0
+        SELECT 'Region added successfully.' AS Message;
+    ELSE
+        SELECT 'Failed to add region.' AS Message;
 END;
+
+
+EXEC AddRegion @name = 'Africa';
+
+DBCC CHECKIDENT ('tbl_regions', RESEED, 0);
 
 /*
 INSERT INTO tbl_regions (name)
@@ -19,10 +27,3 @@ WHERE name = 'Africa';
 
 Select * from tbl_regions;
 */
-
-DECLARE @NewID INT;
-EXEC AddRegion @name = 'Africa';
-SELECT @NewID = SCOPE_IDENTITY();
-SELECT @NewID AS IDBaru;
-
-DBCC CHECKIDENT ('tbl_regions', RESEED, 0);

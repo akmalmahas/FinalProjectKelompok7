@@ -1,5 +1,3 @@
-
---tr update 
 CREATE TRIGGER trg_AfterUpdateEmployeeJob
 ON tbl_employees
 AFTER UPDATE
@@ -7,29 +5,20 @@ AS
 BEGIN
     SET NOCOUNT ON;
 
-	 -- Mengaktifkan penyisipan nilai eksplisit ke kolom identitas
-    SET IDENTITY_INSERT tbl_job_histories ON;
-
-    -- Menambahkan data ke tabel job_histories dengan status 'Hand Over' untuk setiap perubahan pada kolom job
-    INSERT INTO tbl_job_histories (employee, start_date, end_date, status, job, department)
-    SELECT 
-        d.id, 
-        GETDATE(), -- Tanggal perubahan
-        NULL, 
-        'HAND OVER', 
-        d.job, 
-        d.department
+    -- Memperbarui data di tabel job_histories dengan status 'HAND OVER' untuk setiap perubahan pada kolom job
+    UPDATE tbl_job_histories
+    SET 
+        start_date = GETDATE(), -- Tanggal mulai pekerjaan baru
+        end_date = NULL, 
+        status = 'HAND OVER',
+        job = i.job,
+        department = i.department
     FROM 
-        deleted d -- Data sebelum update
+        deleted d
     JOIN 
-        inserted i ON d.id = i.id -- Data setelah update
+        inserted i ON d.id = i.id
     WHERE 
-        d.job <> i.job; -- Memeriksa apakah ada perubahan pada kolom job
-
-	-- Menonaktifkan kembali penyisipan nilai eksplisit ke kolom identitas
-    SET IDENTITY_INSERT tbl_job_histories OFF;
+        d.job <> i.job -- Memeriksa apakah ada perubahan pada kolom job
+        AND tbl_job_histories.employee = d.id
+        AND tbl_job_histories.end_date IS NULL; -- Memperbarui entri aktif
 END;
-
-
-
-

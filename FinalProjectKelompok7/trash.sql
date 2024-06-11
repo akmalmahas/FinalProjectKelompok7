@@ -3,26 +3,34 @@ EXEC AddRegion @name = 'Africa';
 EXEC AddRegion @name = 'Asia';
 EXEC AddRegion @name = 'America';
 EXEC AddRegion @name = 'Europe';
+EXEC AddRegion @name = 'Arabia';
+
 
 Select * from tbl_regions;
-
+delete from tbl_regions where id >= 1;
 
 -- Reset AI
-DBCC CHECKIDENT ('tbl_regions', RESEED, 3);
-DBCC CHECKIDENT ('tbl_employees', RESEED, 1);
+DBCC CHECKIDENT ('tbl_regions', RESEED, 0);
+DBCC CHECKIDENT ('tbl_locations', RESEED, 0);
+DBCC CHECKIDENT ('tbl_employees', RESEED, 0);
+DBCC CHECKIDENT ('tbl_departments', RESEED, 0);
+DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
+DBCC CHECKIDENT ('tbl_permissions', RESEED, 0);
+DBCC CHECKIDENT ('tbl_roles', RESEED, 0);
+DBCC CHECKIDENT ('tbl_permissions', RESEED, 0);
 
 --Edit Region
-EXEC EditRegion @id = 1, @name = 'Afrika';
+EXEC EditRegion @id =5, @name = 'arab';
 
 SELECT * from tbl_regions;
 
 --delete region
 
-EXEC DeleteRegion @id = '4';
+EXEC DeleteRegion @id = '5';
 
 
 --Add Country
-EXEC AddCountry @id = 'USA', @name = 'United States of America', @region = 1; 
+EXEC AddCountry @id = 'USA', @name = 'United States of America', @region = 3; 
 
 SELECT * FROM tbl_countries;
 
@@ -87,12 +95,12 @@ EXEC DeleteRole @id = 1;
 SELECT * FROM tbl_roles
 
 --AddLocation
-EXEC AddLocation @street_address= 'Jalan Perjuangan 1', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
+EXEC AddLocation @street_address= 'Street 1', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
 
 SELECT * FROM tbl_locations;
 
 --EditLocation
-EXEC EditLocation @id=1, @street_address= 'Jalan Perjuangan 2', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
+EXEC EditLocation @id=1, @street_address= 'Street 2', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
 EXEC EditLocation @id=1, @postal_code='20101';
 
 SELECT * FROM tbl_locations;
@@ -103,12 +111,12 @@ EXEC Deletelocation @id = '1';
 SELECT * FROM tbl_locations;
 
 --AddDepartment
-EXEC AddDepartment @name = 'Engineering', @locations = 1; 
+EXEC AddDepartment @name = 'Engineering', @locations = 2; 
 
 SELECT * FROM tbl_departments;
 
 --EditDepartment
-EXEC EditDepartment @id = 2, @name = 'Officer', @locations=6;
+EXEC EditDepartment @id = 2, @name = 'Officer', @locations=2;
 
 SELECT * from tbl_departments;
 

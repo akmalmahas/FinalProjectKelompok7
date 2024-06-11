@@ -1,19 +1,18 @@
-CREATE TRIGGER trg_AfterDeleteEmployee
+CREATE TRIGGER trg_AfterDeleteEmployeeJob
 ON tbl_employees
 AFTER DELETE
 AS
 BEGIN
     SET NOCOUNT ON;
 
-    -- Menambahkan data ke tabel job_histories dengan status 'Resign' untuk setiap penghapusan pada tabel employee
-    INSERT INTO tbl_job_histories (employee, start_date, end_date, status, job, department)
-    SELECT 
-        d.id, 
-        GETDATE(), -- Tanggal penghapusan
-        NULL, 
-        'Resign', 
-        d.job, 
-        d.department
+    -- Memperbarui data di tabel job_histories dengan status 'RESIGN' untuk setiap penghapusan pada tabel employees
+    UPDATE tbl_job_histories
+    SET 
+        end_date = GETDATE(), -- Tanggal penghapusan data karyawan
+        status = 'RESIGN'
     FROM 
-        deleted d; -- Data yang dihapus
+        deleted d
+    WHERE 
+        tbl_job_histories.employee = d.id
+        AND tbl_job_histories.end_date IS NULL; -- Memperbarui entri aktif
 END;

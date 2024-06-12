@@ -74,8 +74,8 @@
           <FullPath>func_IsValidPhoneNumber.sql</FullPath>
         </FileNode>
         <FileNode Name="Initial_db.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>Initial_db.sql</FullPath>
         </FileNode>
@@ -102,6 +102,12 @@
           <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>trash.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_AddAccountRoles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_AddAccountRoles.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddCountry.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
@@ -151,11 +157,23 @@
           <AssociatedConnUserName />
           <FullPath>usp_AddRole.sql</FullPath>
         </FileNode>
+        <FileNode Name="usp_AddRolePermission.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_AddRolePermission.sql</FullPath>
+        </FileNode>
         <FileNode Name="usp_ChangePassword.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
           <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_ChangePassword.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_DeleteAccountRoles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_DeleteAccountRoles.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_DeleteCountry.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
@@ -204,6 +222,18 @@
           <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_DeleteRole.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_DeleteRolePermission.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_DeleteRolePermission.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_EditAccountRoles.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_EditAccountRoles.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditCountry.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
@@ -258,6 +288,12 @@
           <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditRole.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_EditRolePermission.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_EditRolePermission.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_forgot_password.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>

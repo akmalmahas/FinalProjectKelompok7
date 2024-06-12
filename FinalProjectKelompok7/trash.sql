@@ -22,7 +22,7 @@ DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
 DBCC CHECKIDENT ('tbl_role_permissions', RESEED, 0);
 
 --Edit Region
-EXEC EditRegion @id =5, @name = 'arab';
+EXEC EditRegion @id =5, @name = 'Antartica';
 
 SELECT * from tbl_regions;
 
@@ -33,12 +33,14 @@ EXEC DeleteRegion @id = '5';
 
 --Add Country
 EXEC AddCountry @id = 'USA', @name = 'United States of America', @region = 3; 
+EXEC AddCountry @id = 'IDN', @name = 'Indonesia', @region = 2; 
+EXEC AddCountry @id = 'GER', @name = 'Germany', @region = 4; 
 
 SELECT * FROM tbl_countries;
 
 --Edit Country
-EXEC EditCountry @id ='USA', @name = 'United States of Americaaaaaa';
-EXEC EditCountry @id ='USA', @region = 4;
+EXEC EditCountry @id ='USA', @name = 'America';
+EXEC EditCountry @id ='USA', @region = 3;
 EXEC EditCountry @id ='USA', @region = 10;
 
 SELECT * FROM tbl_countries;
@@ -49,12 +51,16 @@ EXEC DeleteCountry @id = 'USA';
 SELECT * FROM tbl_countries;
 
 --AddPermission 
-EXEC AddPermission	@name = 'GRANT UPDATE';
+EXEC AddPermission	@name = 'INSERT';
+EXEC AddPermission	@name = 'UPDATE';
+EXEC AddPermission	@name = 'DELETE';
+EXEC AddPermission	@name = 'SELECT';
+
 
 SELECT * FROM tbl_permissions
 
 --EditPermission
-EXEC EditPermission @id = 1, @name = 'GRANT INSERT';
+EXEC EditPermission @id = 4, @name = 'VIEW';
 
 SELECT * FROM tbl_permissions
 
@@ -66,6 +72,8 @@ SELect* from tbl_permissions
 --Add Job
 EXEC AddJob @id = 'Engineer', @title = 'Software Engineer', @min_salary = 2500000, @max_salary = 10000000;
 EXEC AddJob @id = 'Manager', @title = 'Project Manager', @min_salary = 5000000, @max_salary = 18000000; 
+EXEC AddJob @id = 'Directure', @title = 'Directure', @min_salary = 10000000, @max_salary = 25000000; 
+EXEC AddJob @id = 'Directures', @title = 'Directures', @min_salary = 10000000, @max_salary = 25000000; 
 
 SELECT * FROM tbl_jobs;
 
@@ -77,17 +85,20 @@ EXEC EditJob @id = 'Engineer', @title = 'Data Engineer';
 SELECT * FROM tbl_jobs;
 
 --Delete Job
-EXEC DeleteJob @id = 'Engineer';
+EXEC DeleteJob @id = 'Directures';
 
 SELECT * FROM tbl_jobs;
 
 --AddRoles
-EXEC AddRole  @name = 'db_owner';
+EXEC AddRole  @name = 'SuperAdmin';
+EXEC AddRole  @name = 'Admin';
+EXEC AddRole  @name = 'Manager';
+EXEC AddRole  @name = 'Employee';
 
 SELECT * FROM tbl_roles
 
 --EditRole
-EXEC EditRole @id = 1, @name = 'db_accessadmin';
+EXEC EditRole @id = 1, @name = 'Super Admin';
 
 SELECT * FROM tbl_roles
 
@@ -98,6 +109,8 @@ SELECT * FROM tbl_roles
 
 --AddLocation
 EXEC AddLocation @street_address= 'Street 1', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
+EXEC AddLocation @street_address= 'Jalan Kenangan', @postal_code='18293', @city = 'Bekasi', @state_province = 'Jawa Barat' , @country='IDN';
+EXEC AddLocation @street_address= 'Street Socher', @postal_code='99991', @city = 'Berlin', @state_province = 'Eastern Germany' , @country='GER';
 
 SELECT * FROM tbl_locations;
 
@@ -114,16 +127,19 @@ SELECT * FROM tbl_locations;
 
 --AddDepartment
 EXEC AddDepartment @name = 'Engineering', @locations = 2; 
+EXEC AddDepartment @name = 'Technical', @locations = 1; 
+EXEC AddDepartment @name = 'Marketing', @locations = 3; 
+
 
 SELECT * FROM tbl_departments;
 
 --EditDepartment
-EXEC EditDepartment @id = 2, @name = 'Officer', @locations=2;
+EXEC EditDepartment @id = 3, @name = 'Officer', @locations=1;
 
 SELECT * from tbl_departments;
 
 --Delete Department
-EXEC DeleteDepartment @id = '2';
+EXEC DeleteDepartment @id = '4';
 
 --EXEC DELETE Employee
 EXEC DeleteEmployee @id = '3';
@@ -228,5 +244,110 @@ DROP TRIGGER trg_AfterInsertEmployee;
 DROP TRIGGER trg_AfterUpdateEmployeeJob;
 DROP TRIGGER trg_AfterDeleteEmployee;
 
+--add role permission
+Exec AddRolesPermission @RoleId = 1 , @PermissionId = 1;
+Exec AddRolesPermission @RoleId = 1 , @PermissionId = 2;
+Exec AddRolesPermission @RoleId = 1 , @PermissionId = 3;
+Exec AddRolesPermission @RoleId = 1 , @PermissionId = 4;
+Exec AddRolesPermission @RoleId = 2 , @PermissionId = 1;
+Exec AddRolesPermission @RoleId = 2 , @PermissionId = 2;
+Exec AddRolesPermission @RoleId = 2 , @PermissionId = 3;
+Exec AddRolesPermission @RoleId = 2 , @PermissionId = 4;
+Exec AddRolesPermission @RoleId = 3 , @PermissionId = 2;
+Exec AddRolesPermission @RoleId = 3 , @PermissionId = 4;
+Exec AddRolesPermission @RoleId = 4 , @PermissionId = 2;
+Exec AddRolesPermission @RoleId = 4 , @PermissionId = 4;
+
+select * from tbl_role_permissions;
+select * from tbl_permissions;
+
+delete from tbl_role_permissions where role >= 1;
+
+DBCC CHECKIDENT ('tbl_role_permissions', RESEED, 0);
+
+--edit role_permissions
+Exec EditRolesPermission @RolesPermissionId = 12 , @RoleId = 4 , @PermissionId = 4;
 
 
+--delete role_permissions
+Exec DeleteRolesPermission @RolesPermissionId = 12;
+
+
+--add account roles
+exec AddAccountRoles @AccountId= , @RoleId= ;
+exec AddAccountRoles @AccountId= , @RoleId= ;
+exec AddAccountRoles @AccountId= , @RoleId= ;
+exec AddAccountRoles @AccountId= , @RoleId= ;
+
+--edit account roles
+exec EditAccountRoles @AccountRoleId = , @NewAccountId= , @NewRoleId= ;
+exec EditAccountRoles @AccountRoleId = , @NewAccountId= , @NewRoleId= ;
+exec EditAccountRoles @AccountRoleId = , @NewAccountId= , @NewRoleId= ;
+exec EditAccountRoles @AccountRoleId = , @NewRoleId= ;
+
+--delete account roles
+exec DeleteAccountRoles @AccountRoleId = ;
+
+
+--add employee +trigger
+EXECUTE AddEmployee @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
+                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 8000000, @manager = null,
+                    @job = 'Directure', @department = 1, @password = 'Password1!', @confirm_password = 'Password1!';
+
+EXECUTE AddEmployee @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
+                    @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
+                    @job = 'Manager', @department = 1, @password = 'Z!d4nnnn', @confirm_password = 'Z!d4nnnn';
+
+EXECUTE AddEmployee @first_name = 'Akmal', @last_name = 'Mahasna', @gender = 'Male', @email = 'akmal@gmail.com',
+                    @phone = '088823212', @hire_date = '2024-10-01', @salary = 5000000, @manager = 2,
+                    @job = 'Engineer', @department = 3, @password = 'Akm4l@ja', @confirm_password = 'Akm4l@ja';
+
+EXECUTE AddEmployee @first_name = 'Ragil', @last_name = 'Ramadhan', @gender = 'Male', @email = 'ragil@gmail.com',
+                    @phone = '088823219', @hire_date = '2024-10-01', @salary = 5000000, @manager = 1,
+                    @job = 'Engineer', @department = 3, @password = 'Ra9!l0990', @confirm_password = 'Ra9!l0990';
+
+EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male', @email = 'hnf@gmail.com',
+                    @phone = '0213232', @hire_date = '2024-12-11', @salary = 10000000, @manager = 3,
+                    @job = 'Engineer', @department = 1, @password = '!hanhaN12', @confirm_password = '!hanhaN12';
+
+EXECUTE AddEmployee @first_name = 'Putri', @last_name = 'Mila', @gender = 'Female', @email = 'mila@gmail.com',
+                    @phone = '08291222', @hire_date = '2024-09-09', @salary = 10000000, @manager = 3,
+                    @job = 'Engineer', @department = 1, @password = 'Mila5@qq', @confirm_password = 'Mila5@qq';
+
+
+select * from  tbl_employees;
+select * from tbl_accounts
+select * from tbl_job_histories
+
+delete from tbl_job_histories where employee >=1;
+delete from tbl_accounts where id >=1;
+delete from tbl_employees where id >=1;
+
+ 
+ DBCC CHECKIDENT ('tbl_employees', RESEED, 0);
+ DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
+ DBCC CHECKIDENT ('tbl_job_histories', RESEED, 0);
+
+--login
+EXEC Login @username_or_email = 'akmal@gmail.com', @password = 'Akm4l@ja1';
+
+--OTP
+EXEC GenerateOTP @Email = 'akmal@gmail.com';
+
+--FORGOT PASSWORD
+EXEC ForgotPassword @Email = 'akmal@gmail.com', @NewPassword = 'Akmal900!', @ConfirmPassword = 'Akmal900!', @OTP = 5520;
+
+--edit employee + trigger
+EXECUTE EditEmployee @id='2', @job= 'Engineer';
+EXECUTE EditEmployee @id='8', @job= 'Manager';
+
+--Delete employee +triger
+exec DeleteEmployee @id = 7;
+
+-- Disable constraint
+ALTER TABLE tbl_job_histories NOCHECK CONSTRAINT FK_tbl_job_histories_tbl_employees;
+
+-- Perform data cleanup or error correction tasks
+
+-- Re-enable constraint
+ALTER TABLE tbl_job_histories WITH CHECK CHECK CONSTRAINT FK_tbl_job_histories_tbl_employees;

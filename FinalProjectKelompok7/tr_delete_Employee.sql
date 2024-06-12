@@ -8,6 +8,7 @@ BEGIN
     -- Memperbarui data di tabel job_histories dengan status 'RESIGN' untuk setiap penghapusan pada tabel employees
     UPDATE tbl_job_histories
     SET 
+		start_date = hire_date,
         end_date = GETDATE(), -- Tanggal penghapusan data karyawan
         status = 'RESIGN'
     FROM 

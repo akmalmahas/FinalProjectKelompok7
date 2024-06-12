@@ -3,7 +3,7 @@
   <Items>
     <LogicalFolder Name="Connections" Type="2" Sorted="true">
       <Items>
-        <ConnectionNode Name="AKMAL:AKMAL\ACER">
+        <ConnectionNode Name="AKMAL:LAPTOP-QHO09EBD\ZIDAN">
           <Created>2024-05-31T15:57:30.8900914+07:00</Created>
           <Type>SQL</Type>
           <Server>AKMAL</Server>
@@ -15,7 +15,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="LAPTOP-QHO09EBD:AKMAL\ACER">
+        <ConnectionNode Name="LAPTOP-QHO09EBD:LAPTOP-QHO09EBD\ZIDAN">
           <Created>2024-05-31T15:36:50.4520096+07:00</Created>
           <Type>SQL</Type>
           <Server>LAPTOP-QHO09EBD</Server>
@@ -27,7 +27,7 @@
           <ConnectionProtocol>NotSpecified</ConnectionProtocol>
           <ApplicationName />
         </ConnectionNode>
-        <ConnectionNode Name="MSI:AKMAL\ACER">
+        <ConnectionNode Name="MSI:LAPTOP-QHO09EBD\ZIDAN">
           <Created>2024-06-04T13:33:26.5500542+07:00</Created>
           <Type>SQL</Type>
           <Server>MSI</Server>
@@ -50,8 +50,8 @@
           <FullPath>func_IsValidEmail.sql</FullPath>
         </FileNode>
         <FileNode Name="func_IsValidGender.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>func_IsValidGender.sql</FullPath>
         </FileNode>
@@ -140,8 +140,8 @@
           <FullPath>usp_AddPermission.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_AddRegion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>MSI</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_AddRegion.sql</FullPath>
         </FileNode>
@@ -248,8 +248,8 @@
           <FullPath>usp_EditProfile.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_EditRegion.sql">
-          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:AKMAL:True</AssociatedConnectionMoniker>
-          <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditRegion.sql</FullPath>
         </FileNode>
@@ -258,6 +258,24 @@
           <AssociatedConnSrvName>AKMAL</AssociatedConnSrvName>
           <AssociatedConnUserName />
           <FullPath>usp_EditRole.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_forgot_password.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_forgot_password.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_generate_otp.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_generate_otp.sql</FullPath>
+        </FileNode>
+        <FileNode Name="usp_login.sql">
+          <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:LAPTOP-QHO09EBD:True</AssociatedConnectionMoniker>
+          <AssociatedConnSrvName>LAPTOP-QHO09EBD</AssociatedConnSrvName>
+          <AssociatedConnUserName />
+          <FullPath>usp_login.sql</FullPath>
         </FileNode>
         <FileNode Name="usp_Register.sql">
           <AssociatedConnectionMoniker>8c91a03d-f9b4-46c0-a305-b5dcc79ff907:MSI:True</AssociatedConnectionMoniker>

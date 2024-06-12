@@ -18,6 +18,8 @@ DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
 DBCC CHECKIDENT ('tbl_permissions', RESEED, 0);
 DBCC CHECKIDENT ('tbl_roles', RESEED, 0);
 DBCC CHECKIDENT ('tbl_permissions', RESEED, 0);
+DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
+DBCC CHECKIDENT ('tbl_role_permissions', RESEED, 0);
 
 --Edit Region
 EXEC EditRegion @id =5, @name = 'arab';
@@ -225,4 +227,6 @@ SELECT * FROM vw_Employee;
 DROP TRIGGER trg_AfterInsertEmployee;
 DROP TRIGGER trg_AfterUpdateEmployeeJob;
 DROP TRIGGER trg_AfterDeleteEmployee;
+
+
 

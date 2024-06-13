@@ -1,4 +1,7 @@
 CREATE VIEW vw_country
 AS
-SELECT Id, Name, region
-FROM tbl_countries;
+SELECT c.id, 
+	c.Name, 
+	r.name AS Region
+FROM tbl_countries c
+INNER JOIN tbl_regions r ON c.region = r.id;

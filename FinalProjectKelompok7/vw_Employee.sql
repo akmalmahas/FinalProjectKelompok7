@@ -3,7 +3,7 @@ SELECT
     e.id,
     CONCAT(e.first_name, ' ', e.last_name) AS fullname,
     j.id AS job,
-    d.id AS department
+    d.name AS department
     
 FROM tbl_employees e
 INNER JOIN tbl_jobs j ON j.id = e.job

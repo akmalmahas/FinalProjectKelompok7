@@ -339,10 +339,10 @@ EXEC ForgotPassword @Email = 'akmal@gmail.com', @NewPassword = 'Akmal900!', @Con
 
 --edit employee + trigger
 EXECUTE EditEmployee @id='2', @job= 'Engineer';
-EXECUTE EditEmployee @id='8', @job= 'Manager';
+EXECUTE EditEmployee @id='9', @job= 'Manager';
 
 --Delete employee +triger
-exec DeleteEmployee @id = 7;
+exec DeleteEmployee @id = 9;
 
 -- Disable constraint
 ALTER TABLE tbl_job_histories NOCHECK CONSTRAINT FK_tbl_job_histories_tbl_employees;
@@ -351,3 +351,29 @@ ALTER TABLE tbl_job_histories NOCHECK CONSTRAINT FK_tbl_job_histories_tbl_employ
 
 -- Re-enable constraint
 ALTER TABLE tbl_job_histories WITH CHECK CHECK CONSTRAINT FK_tbl_job_histories_tbl_employees;
+
+
+--vw_EmployeeDetails
+DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
+EXEC AddAccountRoles @AccountId = 1, @RoleId = 1;
+EXEC AddAccountRoles @AccountId = 2, @RoleId = 2;
+EXEC AddAccountRoles @AccountId = 3, @RoleId = 3;
+EXEC AddAccountRoles @AccountId = 4, @RoleId = 4;
+EXEC AddAccountRoles @AccountId = 8, @RoleId = 4;
+
+EXEC DeleteAccountRoles @AccountRoleId  = 6;
+
+select * from vw_RolePermission
+select * from tbl_account_roles
+select * from tbl_roles
+
+SELECT * FROM vw_EmployeeDetails;
+
+DELETE FROM tbl_roles WHERE ID >= 1;
+
+DBCC CHECKIDENT ('tbl_roles', RESEED, 0);
+DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
+
+DBCC CHECKIDENT ('tbl_account_roles')
+EXEC EditAccountRoles @AccountRoleId = 2, @NewAccountId = 2, @NewRoleId = 2;
+EXEC EditAccountRoles @AccountRoleId = 4, @NewAccountId = 8, @NewRoleId = 4;

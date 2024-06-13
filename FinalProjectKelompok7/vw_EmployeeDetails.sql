@@ -20,7 +20,7 @@ LEFT JOIN tbl_departments d ON e.department = d.id
 LEFT JOIN tbl_locations l ON d.locations = l.id
 LEFT JOIN tbl_job_histories jh ON e.id = jh.employee
 LEFT JOIN tbl_account_roles ar ON a.id = ar.account
-LEFT JOIN tbl_roles r ON ar.id = r.id
+LEFT JOIN tbl_roles r ON ar.role = r.id
 WHERE 
     jh.start_date = (
         SELECT MAX(jh2.start_date)

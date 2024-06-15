@@ -36,24 +36,6 @@ BEGIN
         RETURN;
     END
 
-    -- Memeriksa apakah OTP masih berlaku dan belum digunakan
-    DECLARE @otp INT, @is_expired DATETIME, @is_used BIT;
-    SELECT @otp = otp, @is_expired = is_expired, @is_used = is_used
-    FROM tbl_accounts
-    WHERE id = @id;
-
-    IF @current_datetime > @is_expired OR @is_used = 1
-    BEGIN
-        -- Mengembalikan pesan kesalahan jika OTP sudah kadaluarsa atau sudah digunakan
-        SELECT 'OTP is expired or already used. Please request a new OTP.' AS Message;
-        RETURN;
-    END
-
-    -- Mengatur OTP sebagai digunakan
-    UPDATE tbl_accounts
-    SET is_used = 1
-    WHERE id = @id;
-
     -- Mengembalikan pesan keberhasilan
     SELECT 'Login successful.' AS Message;
 
@@ -70,3 +52,6 @@ EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
 exec GenerateOTP @Email = 'pia@gmail.com';
 
 select * from tbl_employees
+
+
+

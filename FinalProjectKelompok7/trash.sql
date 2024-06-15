@@ -356,16 +356,22 @@ ALTER TABLE tbl_job_histories WITH CHECK CHECK CONSTRAINT FK_tbl_job_histories_t
 --vw_EmployeeDetails
 DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
 EXEC AddAccountRoles @AccountId = 1, @RoleId = 1;
+EXEC AddAccountRoles @AccountId = 1, @RoleId = 1;
+EXEC AddAccountRoles @AccountId = 1, @RoleId = 1;
 EXEC AddAccountRoles @AccountId = 2, @RoleId = 2;
 EXEC AddAccountRoles @AccountId = 3, @RoleId = 3;
 EXEC AddAccountRoles @AccountId = 4, @RoleId = 4;
 EXEC AddAccountRoles @AccountId = 8, @RoleId = 4;
+EXEC AddAccountRoles @AccountId = 10, @RoleId = 4;
 
 EXEC DeleteAccountRoles @AccountRoleId  = 6;
 
 select * from vw_RolePermission
 select * from tbl_account_roles
 select * from tbl_roles
+
+EXEC EditRole @id = 2, @name = 'db_reader';
+EXEC EditRole @id = 3, @name = 'db_writer';
 
 SELECT * FROM vw_EmployeeDetails;
 
@@ -375,5 +381,69 @@ DBCC CHECKIDENT ('tbl_roles', RESEED, 0);
 DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
 
 DBCC CHECKIDENT ('tbl_account_roles')
+EXEC EditAccountRoles @AccountRoleId = 1, @NewAccountId = 1, @NewRoleId = 5;
 EXEC EditAccountRoles @AccountRoleId = 2, @NewAccountId = 2, @NewRoleId = 2;
-EXEC EditAccountRoles @AccountRoleId = 4, @NewAccountId = 8, @NewRoleId = 4;
+
+-- Langkah 1: Membuat Roles tanpa login
+CREATE ROLE SuperAdmin ;
+CREATE ROLE Admin;
+CREATE ROLE Manager;
+CREATE ROLE Employee;
+
+CREATE LOGIN Johny WITH PASSWORD = 'Password1!';
+CREATE LOGIN Zidan WITH PASSWORD = 'Z!d4nnnn';
+CREATE LOGIN Akmal WITH PASSWORD = 'Akmal900!';
+CREATE LOGIN Ragil WITH PASSWORD = 'Ra9!l0990';
+CREATE LOGIN SANTIPIA WITH PASSWORD = 'PiaS4nt!';
+
+CREATE USER Johny FOR LOGIN Johny;
+CREATE USER Zidan FOR LOGIN Zidan;
+CREATE USER Akmal FOR LOGIN Akmal;
+CREATE USER Ragil FOR LOGIN Ragil;
+CREATE USER SANTIPIA FOR LOGIN SANTIPIA;
+
+-- Langkah 2: Memberikan Hak Akses pada Roles
+
+-- Hak Akses untuk super_admin
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Permission TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRoleMember TO SuperAdmin;
+
+-- Hak Akses untuk admin
+GRANT SELECT, INSERT, UPDATE ON vw_EmployeeDetails TO admin;
+GRANT EXECUTE ON sp_InsertEmployee TO admin;
+
+-- Hak Akses untuk manager
+GRANT SELECT, UPDATE ON vw_EmployeeDetails TO manager;
+
+-- Hak Akses untuk employee
+GRANT UPDATE ON vw_EmployeeDetails TO employee;
+
+-- Langkah 3: Menetapkan Roles ke Pengguna
+ALTER ROLE SuperAdmin ADD MEMBER SANTIPIA;
+ALTER ROLE admin ADD MEMBER SANTIPIA;
+ALTER ROLE manager ADD MEMBER user_manager;
+ALTER ROLE employee ADD MEMBER user_employee;
+
+EXECUTE AS USER = 'Akmal';
+EXECUTE AS USER = 'Johny';
+SELECT * from vw_EmployeeDetails;
+SELECT * from vw_Permission;
+execute EditPermission @id = 1, @name='INSERT';
+SELECT * from tbl_permissions
+revert;
+
+SELECT * from vw_RolePermission;
+execute as user = 'SANTIPIA';
+execute as user = 'Johny';
+SELECT * from vw_Region;
+
+EXEC EditProfile @id =1, @username ='Johny'
+EXEC Login @username= 'Johny', @password='Password1!';
+EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
+exec GenerateOTP @Email = 'johnyyyy@example.com';
+
+select * from tbl_employees
+select * from tbl_account_roles 
+
+revert;

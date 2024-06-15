@@ -7,8 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---exec
-EXEC DeleteCountry @id = 'USA';
-
-SELECT * FROM tbl_countries;
-

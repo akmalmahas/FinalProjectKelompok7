@@ -13,7 +13,3 @@ BEGIN
     -- Mengembalikan pesan keberhasilan
     SELECT 'Location added successfully.' AS Message;
 END;
-
-EXEC AddLocation @street_address= 'Jalan Perjuangan 1', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
-
-SELECT * FROM tbl_locations;

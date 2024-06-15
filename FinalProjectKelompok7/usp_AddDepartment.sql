@@ -11,6 +11,4 @@ BEGIN
     SELECT 'Department added successfully.' AS Message;
 END;
 
-EXEC AddDepartment @name = 'Engineering', @locations = 1; 
 
-SELECT * FROM tbl_departments;

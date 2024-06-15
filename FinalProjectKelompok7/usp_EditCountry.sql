@@ -23,6 +23,3 @@ BEGIN
     END
 END;
 
-EXEC EditCountry @id ='USA', @name = 'United States of America', @region = 1;
-
-SELECT * FROM tbl_countries;

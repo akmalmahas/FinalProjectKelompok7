@@ -21,7 +21,3 @@ BEGIN
     END
 END;
 
---EditRole
-EXEC EditRole @id = 1, @name = 'db_accessadmin';
-
-SELECT * FROM tbl_roles

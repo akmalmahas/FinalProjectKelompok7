@@ -105,48 +105,6 @@ END;
 
 
 
-EXECUTE AddEmployee @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
-                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 8000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'Password1!', @confirm_password = 'Password1!';
-
-EXECUTE AddEmployee @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
-                    @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'Z!d4nnnn', @confirm_password = 'Z!d4nnnn';
-
-EXECUTE AddEmployee @first_name = 'Akmal', @last_name = 'Mahasna', @gender = 'Male', @email = 'akmal@gmail.com',
-                    @phone = '088823212', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'Akm4l@ja', @confirm_password = 'Akm4l@ja';
-
-EXECUTE AddEmployee @first_name = 'Ragil', @last_name = 'Ramadhan', @gender = 'Male', @email = 'ragil@gmail.com',
-                    @phone = '088823219', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'Ra9!l0990', @confirm_password = 'Ra9!l0990';
-
-EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male', @email = 'hnf@gmail.com',
-                    @phone = '0213232', @hire_date = '2024-12-11', @salary = 10000000, @manager = 1,
-                    @job = 'Manager', @department = 5, @password = 'hanhan12', @confirm_password = 'hanhan12';
-
-EXECUTE AddEmployee @first_name = 'SANTI', @last_name = 'PIA', @gender = 'Female', @email = 'pia@gmail.com',
-                    @phone = '0213232', @hire_date = '2009-10-10', @salary = 10000000, @manager = 3,
-                    @job = 'Manager', @department = 3, @password = 'PiaS4nt!', @confirm_password = 'PiaS4nt!';
-
-
-select * from  tbl_employees;
-select * from tbl_accounts
-select * from tbl_job_histories
-
-select * from tbl_jobs
-select * from tbl_departments
-
-delete from tbl_job_histories where employee >=1;
-delete from tbl_accounts where id >=1;
-delete from tbl_employees where id >=1;
-
- 
- DBCC CHECKIDENT ('tbl_employees', RESEED, 0);
- DBCC CHECKIDENT ('tbl_accounts', RESEED, 0);
- DBCC CHECKIDENT ('tbl_job_histories', RESEED, 0);
-
-
 
 
 

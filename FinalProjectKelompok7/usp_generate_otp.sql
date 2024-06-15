@@ -45,4 +45,3 @@ BEGIN
 END;
 GO
 
-EXEC GenerateOTP @Email = 'akmal@gmail.com';

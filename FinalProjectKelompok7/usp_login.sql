@@ -47,11 +47,6 @@ BEGIN
 END;
 GO
 
-EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
-
-exec GenerateOTP @Email = 'pia@gmail.com';
-
-select * from tbl_employees
 
 
 

@@ -21,7 +21,3 @@ BEGIN
     END
 END;
 
---EditPermission
-EXEC EditPermission @id = 1, @name = 'GRANT INSERT';
-
-SELECT * FROM tbl_permissions

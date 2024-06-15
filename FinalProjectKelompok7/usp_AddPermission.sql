@@ -6,7 +6,3 @@ BEGIN
     VALUES (@name);
 END;
 
---AddPermission 
-EXEC AddPermission	@name = 'GRANT UPDATE';
-
-SELECT * FROM tbl_permissions

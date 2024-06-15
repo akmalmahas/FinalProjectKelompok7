@@ -12,6 +12,3 @@ BEGIN
     SELECT 'Country added successfully.' AS Message;
 END;
 
-EXEC AddCountry @id = 'USA', @name = 'United States of America', @region = 1; 
-
-SELECT * FROM tbl_countries;

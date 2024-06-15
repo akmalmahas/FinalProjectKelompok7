@@ -25,8 +25,3 @@ BEGIN
     END
 END;
 
-EXEC EditJob @id = 'Engineer', @title = 'Software Engineer', @min_salary = 3000000, @max_salary = 10000000;
-EXEC EditJob @id = 'Engineer', @title = 'Software Engineer', @max_salary = 25000000;
-EXEC EditJob @id = 'Engineer', @title = 'Data Engineer';
-
-SELECT * FROM tbl_jobs;

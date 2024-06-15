@@ -13,8 +13,3 @@ BEGIN
     SELECT 'Job added successfully.' AS Message;
 END;
 
-EXEC AddJob @id = 'Engineer', @title = 'Software Engineer', @min_salary = 2500000, @max_salary = 10000000;
-EXEC AddJob @id = 'Manager', @title = 'Project Manager', @min_salary = 5000000, @max_salary = 18000000;
-EXEC AddJob @id = 'Directure', @title = 'Precident Directure', @min_salary = 7000000, @max_salary = 20000000;
-
-SELECT * FROM tbl_jobs;

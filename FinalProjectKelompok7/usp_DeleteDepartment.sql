@@ -7,7 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---exec
-EXEC DeleteDepartment @id = '2';
-
-SELECT * FROM tbl_departments;

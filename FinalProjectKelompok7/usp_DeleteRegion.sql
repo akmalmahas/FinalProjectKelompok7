@@ -7,5 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---exec
-EXEC DeleteRegion @id = '4';

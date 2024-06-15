@@ -7,8 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---exec
-EXEC DeleteJob @id = 'Engineer';
-
-SELECT * FROM tbl_jobs;
-

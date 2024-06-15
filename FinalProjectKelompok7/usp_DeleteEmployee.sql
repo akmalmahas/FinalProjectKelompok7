@@ -30,8 +30,3 @@ BEGIN
         THROW;
     END CATCH
 END;
-
---EXEC DELETE Employee
-EXEC DeleteEmployee @id = '1';
-
-SELECT * FROM tbl_employees;

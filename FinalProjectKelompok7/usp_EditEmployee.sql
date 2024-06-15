@@ -79,22 +79,3 @@ BEGIN
     SELECT 'Employee updated successfully.' AS Message;
 END;
 
-
-EXECUTE EditEmployee @id='1', @first_name = 'Johnyyyy', @last_name = 'Doe', @gender = 'Male', @email = 'johnyyyy@example.com',
-                    @phone = '1234567890', @hire_date = '2024-06-10', @salary = 50000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
-
-EXECUTE EditEmployee id='2', @first_name = 'Zidan', @last_name = 'Akmal', @gender = 'Male', @email = 'dan@gmail.com',
-                    @phone = '1234567890', @hire_date = '2024-10-01', @salary = 5000000, @manager = null,
-                    @job = 'Manager', @department = 5, @password = 'password123', @confirm_password = 'password123';
-
-EXECUTE EditEmployee @id='1', @first_name = 'Johny',@email = 'Johny123@gmail.com', @hire_date='2024-01-17' --,@gender = 'laki-laki';
-
-EXECUTE EditEmployee @id='3', @manager=3, @salary=1900000;
-
-EXECUTE EditEmployee @id='2', @email= 'zidan@gmail.com';
-
-EXECUTE EditEmployee @id='1', @job='MANAGER';
-
-select * from  tbl_employees;
-select * from tbl_accounts;

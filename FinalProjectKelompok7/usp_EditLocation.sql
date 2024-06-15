@@ -30,8 +30,3 @@ BEGIN
     END
 END;
 
---exec
-EXEC EditLocation @id=1, @street_address= 'Jalan Perjuangan 2', @postal_code='13200', @city = 'Brooklyn', @state_province = 'New York' , @country='USA'; 
-EXEC EditLocation @id=1, @postal_code='20101';
-
-SELECT * FROM tbl_locations;

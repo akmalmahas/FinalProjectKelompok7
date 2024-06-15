@@ -7,7 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---exec
-EXEC DeleteLocation @id = '1';
-
-SELECT * FROM tbl_locations;

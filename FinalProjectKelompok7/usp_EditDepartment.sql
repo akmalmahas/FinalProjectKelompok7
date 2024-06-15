@@ -25,6 +25,3 @@ BEGIN
 END;
 
 
-EXEC EditDepartment @id = 2, @name = 'Officer', @locations=6;
-
-SELECT * from tbl_departments;

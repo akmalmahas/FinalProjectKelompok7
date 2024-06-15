@@ -13,17 +13,3 @@ BEGIN
         SELECT 'Failed to add region.' AS Message;
 END;
 
-
-EXEC AddRegion @name = 'Africa';
-
-DBCC CHECKIDENT ('tbl_regions', RESEED, 0);
-
-/*
-INSERT INTO tbl_regions (name)
-VALUES ('ASIA');
-
-DELETE FROM tbl_regions
-WHERE name = 'Africa';
-
-Select * from tbl_regions;
-*/

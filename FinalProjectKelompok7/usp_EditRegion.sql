@@ -16,7 +16,3 @@ BEGIN
 END;
 
 
-
-EXEC EditRegion @id = 1, @name = 'Afrika';
-
-SELECT * from tbl_regions;

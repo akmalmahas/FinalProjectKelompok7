@@ -7,7 +7,3 @@ BEGIN
     WHERE id = @id;
 END;
 
---DeleteRole
-EXEC DeleteRole @id = 1;
-
-SELECT * FROM tbl_roles

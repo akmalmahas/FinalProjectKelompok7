@@ -58,8 +58,3 @@ BEGIN
 END;
 
 
-EXEC EditProfile @id =2, @username ='zidan1@gmail.com', @email='zidan1@gmail.com';
-EXEC EditProfile @id =5, @username ='hanifuyee1', @email='nif@gmail.com';
-
-SELECT * FROM tbl_accounts;
-SELECT * FROM tbl_employees;

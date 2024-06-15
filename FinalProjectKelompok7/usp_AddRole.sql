@@ -6,7 +6,3 @@ BEGIN
     VALUES (@name);
 END;
 
---AddRoles
-EXEC AddRole  @name = 'db_owner';
-
-SELECT * FROM tbl_roles

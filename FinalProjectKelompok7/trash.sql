@@ -370,8 +370,10 @@ select * from vw_RolePermission
 select * from tbl_account_roles
 select * from tbl_roles
 
-EXEC EditRole @id = 2, @name = 'db_reader';
-EXEC EditRole @id = 3, @name = 'db_writer';
+EXEC EditRole @id = 1, @name = 'SuperAdmin';
+EXEC EditRole @id = 2, @name = 'Admin';
+EXEC EditRole @id = 3, @name = 'Manager';
+EXEC EditRole @id = 4, @name = 'Employee';
 
 SELECT * FROM vw_EmployeeDetails;
 
@@ -381,10 +383,14 @@ DBCC CHECKIDENT ('tbl_roles', RESEED, 0);
 DBCC CHECKIDENT ('tbl_account_roles', RESEED, 0);
 
 DBCC CHECKIDENT ('tbl_account_roles')
-EXEC EditAccountRoles @AccountRoleId = 1, @NewAccountId = 1, @NewRoleId = 5;
+EXEC EditAccountRoles @AccountRoleId = 1, @NewAccountId = 1, @NewRoleId = 1;
 EXEC EditAccountRoles @AccountRoleId = 2, @NewAccountId = 2, @NewRoleId = 2;
+EXEC EditAccountRoles @AccountRoleId = 7, @NewAccountId = 3, @NewRoleId = 3;
+EXEC EditAccountRoles @AccountRoleId = 8, @NewAccountId = 4, @NewRoleId = 4;
+EXEC EditAccountRoles @AccountRoleId = 10, @NewAccountId = 4, @NewRoleId = 4;
 
--- Langkah 1: Membuat Roles tanpa login
+
+-- Langkah 1: Membuat Roles
 CREATE ROLE SuperAdmin ;
 CREATE ROLE Admin;
 CREATE ROLE Manager;
@@ -405,6 +411,7 @@ CREATE USER SANTIPIA FOR LOGIN SANTIPIA;
 -- Langkah 2: Memberikan Hak Akses pada Roles
 
 -- Hak Akses untuk super_admin
+--ragil
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
@@ -419,11 +426,11 @@ GRANT EXECUTE ON dbo.AddPermission TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRegion TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRole TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRolesPermission TO SuperAdmin;
+--akmal
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Job TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Location TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Region TO SuperAdmin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Role TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Permission TO SuperAdmin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_RolePermission TO SuperAdmin;
@@ -437,10 +444,22 @@ GRANT EXECUTE ON dbo.DeletePermission TO SuperAdmin;
 GRANT EXECUTE ON dbo.DeleteRegion TO SuperAdmin;
 GRANT EXECUTE ON dbo.DeleteRole TO SuperAdmin;
 GRANT EXECUTE ON dbo.DeleteRolesPermission TO SuperAdmin;
+--zidan
+GRANT EXECUTE ON dbo.EditAccountRoles TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditCountry TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditDepartment TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditEmployee TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditJob TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditLocation TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditPermission TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditRegion TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditRole TO SuperAdmin;
+GRANT EXECUTE ON dbo.EditRolesPermission TO SuperAdmin;
+
 
 -- Hak Akses untuk admin
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO Admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO Admin;
+GRANT SELECT, INSERT, UPDATE ON vw_account_roles TO Admin;
+GRANT SELECT, INSERT, UPDATE ON dbo.vw_country TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Employee TO Admin;
 GRANT EXECUTE ON dbo.AddAccountRoles TO Admin;
@@ -454,20 +473,41 @@ GRANT EXECUTE ON dbo.AddRole TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Job TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Location TO Admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Region TO Admin;
+GRANT SELECT, INSERT, UPDATE ON vw_Region TO Admin;
 GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO Admin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Role TO Admin;
+GRANT SELECT, INSERT, UPDATE ON vw_Role TO Admin;
 GRANT EXECUTE ON dbo.DeleteDepartment TO Admin;
 GRANT EXECUTE ON dbo.DeleteEmployee TO Admin;
 GRANT EXECUTE ON dbo.DeleteJob TO Admin;
 GRANT EXECUTE ON dbo.DeleteLocation TO Admin;
+GRANT EXECUTE ON dbo.EditAccountRoles TO Admin;
+GRANT EXECUTE ON dbo.EditCountry TO Admin;
+GRANT EXECUTE ON dbo.EditDepartment TO Admin;
+GRANT EXECUTE ON dbo.EditEmployee TO Admin;
+GRANT EXECUTE ON dbo.EditJob TO Admin;
+GRANT EXECUTE ON dbo.EditLocation TO Admin;
+GRANT EXECUTE ON dbo.EditRegion TO Admin;
+GRANT EXECUTE ON dbo.EditRole TO Admin;
 
+--revoke khusus akmal
+REVOKE DELETE ON dbo.vw_Region TO Admin;
+REVOKE DELETE ON dbo.vw_country TO Admin;
+REVOKE DELETE ON dbo.vw_Role TO Admin;
+REVOKE DELETE ON dbo.vw_account_roles TO Admin;
 
 -- Hak Akses untuk manager
-GRANT SELECT, UPDATE ON vw_EmployeeDetails TO manager;
+GRANT SELECT, UPDATE ON vw_EmployeeDetails TO Manager;
+GRANT SELECT, UPDATE ON vw_Employee TO Manager;
+GRANT SELECT, UPDATE ON vw_Profile TO Manager;
+GRANT EXECUTE ON dbo.ChangePassword TO Manager;
+GRANT EXECUTE ON dbo.EditEmployee TO Manager;
+GRANT EXECUTE ON dbo.EditProfile TO Manager;
 
 -- Hak Akses untuk employee
-GRANT UPDATE ON vw_EmployeeDetails TO employee;
+GRANT SELECT ON vw_Profile TO Employee;
+GRANT EXECUTE ON dbo.EditProfile TO Employee;
+GRANT EXECUTE ON dbo.ChangePassword TO Employee;
+
 
 -- Langkah 3: Menetapkan Roles ke Pengguna
 ALTER ROLE SuperAdmin ADD MEMBER Johny;
@@ -485,10 +525,18 @@ execute EditPermission @id = 1, @name='INSERT';
 SELECT * from tbl_permissions
 revert;
 
-SELECT * from vw_RolePermission;
-execute as user = 'SANTIPIA';
 execute as user = 'Johny';
+SELECT * from vw_RolePermission;
 SELECT * from vw_Region;
+SELECT * from vw_Profile;
+revert;
+
+execute as user = 'SANTIPIA';
+SELECT * from vw_RolePermission;
+SELECT * from vw_Region;
+SELECT * from vw_Profile;
+
+
 
 EXEC EditProfile @id =1, @username ='Johny'
 EXEC Login @username= 'Johny', @password='Password1!';
@@ -496,6 +544,21 @@ EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
 exec GenerateOTP @Email = 'johnyyyy@example.com';
 
 select * from tbl_employees
-select * from tbl_account_roles
+select * from tbl_accounts
 
 revert;
+
+
+CREATE VIEW vw_Profile AS
+SELECT 
+    e.id,
+    a.username,
+    CONCAT(e.first_name, ' ', e.last_name) AS fullname,
+    e.gender,
+    e.email,
+    e.phone
+FROM tbl_employees e
+INNER JOIN tbl_accounts a ON a.id = e.id
+WHERE a.username = SUSER_SNAME();
+
+execute as user ='Zidan';

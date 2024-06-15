@@ -10,4 +10,4 @@ SELECT
 FROM tbl_employees e
 INNER JOIN tbl_accounts a ON a.id = e.id
 
-SELECT * FROM vw_Profile;
+SELECT * FROM vw_Profile where email = 'dan@gmail.com' ;

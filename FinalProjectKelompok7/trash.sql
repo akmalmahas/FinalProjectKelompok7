@@ -419,22 +419,48 @@ GRANT EXECUTE ON dbo.AddPermission TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRegion TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRole TO SuperAdmin;
 GRANT EXECUTE ON dbo.AddRolesPermission TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Job TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Location TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Region TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Role TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Permission TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_RolePermission TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteAccountRoles TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteCountry TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteDepartment TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteEmployee TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteJob TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteLocation TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeletePermission TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteRegion TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteRole TO SuperAdmin;
+GRANT EXECUTE ON dbo.DeleteRolesPermission TO SuperAdmin;
 
 -- Hak Akses untuk admin
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO SuperAdmin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO SuperAdmin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Employee TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddAccountRoles TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddCountry TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddDepartment TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddEmployee TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddJob TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddLocation TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddPermission TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddRegion TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddRole TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddRolesPermission TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Employee TO Admin;
+GRANT EXECUTE ON dbo.AddAccountRoles TO Admin;
+GRANT EXECUTE ON dbo.AddCountry TO Admin;
+GRANT EXECUTE ON dbo.AddDepartment TO Admin;
+GRANT EXECUTE ON dbo.AddEmployee TO Admin;
+GRANT EXECUTE ON dbo.AddJob TO Admin;
+GRANT EXECUTE ON dbo.AddLocation TO Admin;
+GRANT EXECUTE ON dbo.AddRegion TO Admin;
+GRANT EXECUTE ON dbo.AddRole TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Job TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Location TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Region TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO Admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Role TO Admin;
+GRANT EXECUTE ON dbo.DeleteDepartment TO Admin;
+GRANT EXECUTE ON dbo.DeleteEmployee TO Admin;
+GRANT EXECUTE ON dbo.DeleteJob TO Admin;
+GRANT EXECUTE ON dbo.DeleteLocation TO Admin;
 
 
 -- Hak Akses untuk manager
@@ -448,6 +474,7 @@ ALTER ROLE SuperAdmin ADD MEMBER Johny;
 ALTER ROLE admin ADD MEMBER Zidan;
 ALTER ROLE manager ADD MEMBER Akmal;
 ALTER ROLE employee ADD MEMBER Ragil;
+ALTER ROLE employee ADD MEMBER SANTIPIA;
 
 EXECUTE AS USER = 'Akmal';
 EXECUTE AS USER = 'Johny';
@@ -469,6 +496,6 @@ EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
 exec GenerateOTP @Email = 'johnyyyy@example.com';
 
 select * from tbl_employees
-select * from tbl_account_roles 
+select * from tbl_account_roles
 
 revert;

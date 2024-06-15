@@ -1,5 +1,5 @@
-CREATE PROCEDURE Login
-    @username_or_email VARCHAR(25),
+CREATE PROCEDURE [dbo].[Login]
+    @username VARCHAR(25),
     @password VARCHAR(255)
 AS
 BEGIN
@@ -15,12 +15,12 @@ BEGIN
     SELECT @id = e.id
     FROM tbl_employees e
     INNER JOIN tbl_accounts a ON e.id = a.id
-    WHERE e.email = @username_or_email OR a.username = @username_or_email;
+    WHERE CONCAT(e.first_name,'',e.last_name) = @username OR a.username = @username;
 
     IF @id IS NULL
     BEGIN
         -- Mengembalikan pesan kesalahan jika username atau email tidak ditemukan
-        SELECT 'Invalid username/email or password.' AS Message;
+        SELECT 'Invalid username or password.' AS Message;
         RETURN;
     END
 
@@ -38,7 +38,7 @@ BEGIN
 
     -- Memeriksa apakah OTP masih berlaku dan belum digunakan
     DECLARE @otp INT, @is_expired DATETIME, @is_used BIT;
-    SELECT @otp, @is_expired, @is_used
+    SELECT @otp = otp, @is_expired = is_expired, @is_used = is_used
     FROM tbl_accounts
     WHERE id = @id;
 
@@ -56,7 +56,17 @@ BEGIN
 
     -- Mengembalikan pesan keberhasilan
     SELECT 'Login successful.' AS Message;
+
+    -- Mengaktifkan EXECUTE AS USER setelah login berhasil
+    DECLARE @login_user VARCHAR(50);
+    SELECT @login_user = username FROM tbl_accounts WHERE id = @id; -- Ambil username atau identitas yang sesuai
+
+    EXECUTE AS USER = @login_user; -- Aktifkan EXECUTE AS untuk user yang login
 END;
 GO
 
-EXEC Login @username_or_email = 'akmal@gmail.com', @password = 'Akm4l@ja';
+EXEC Login @username = 'SANTIPIA', @password = 'PiaS4nt!';
+
+exec GenerateOTP @Email = 'pia@gmail.com';
+
+select * from tbl_employees

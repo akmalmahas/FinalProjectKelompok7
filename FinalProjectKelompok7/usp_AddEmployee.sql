@@ -84,7 +84,7 @@ BEGIN
 
         -- Menambahkan data ke tabel Accounts
         INSERT INTO tbl_accounts (id, username, password, otp, is_expired, is_used)
-        VALUES (@new_employee_id, @email, @password, @otp, DATEADD(MINUTE, 3, GETDATE()), 0);
+        VALUES (@new_employee_id, CONCAT(@first_name,'',@last_name), @password, @otp, DATEADD(MINUTE, 3, GETDATE()), 0);
 
         -- Menonaktifkan kembali penyisipan nilai eksplisit ke kolom identitas
         SET IDENTITY_INSERT tbl_accounts OFF;
@@ -124,6 +124,11 @@ EXECUTE AddEmployee @first_name = 'Ragil', @last_name = 'Ramadhan', @gender = 'M
 EXECUTE AddEmployee @first_name = 'Fahri', @last_name = 'Hanif', @gender = 'Male', @email = 'hnf@gmail.com',
                     @phone = '0213232', @hire_date = '2024-12-11', @salary = 10000000, @manager = 1,
                     @job = 'Manager', @department = 5, @password = 'hanhan12', @confirm_password = 'hanhan12';
+
+EXECUTE AddEmployee @first_name = 'SANTI', @last_name = 'PIA', @gender = 'Female', @email = 'pia@gmail.com',
+                    @phone = '0213232', @hire_date = '2009-10-10', @salary = 10000000, @manager = 3,
+                    @job = 'Manager', @department = 3, @password = 'PiaS4nt!', @confirm_password = 'PiaS4nt!';
+
 
 select * from  tbl_employees;
 select * from tbl_accounts

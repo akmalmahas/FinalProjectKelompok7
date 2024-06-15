@@ -405,13 +405,37 @@ CREATE USER SANTIPIA FOR LOGIN SANTIPIA;
 -- Langkah 2: Memberikan Hak Akses pada Roles
 
 -- Hak Akses untuk super_admin
-GRANT SELECT, INSERT, UPDATE, DELETE ON vw_EmployeeDetails TO SuperAdmin;
-GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Permission TO SuperAdmin;
-GRANT EXECUTE ON dbo.AddRoleMember TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Employee TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddAccountRoles TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddCountry TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddDepartment TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddEmployee TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddJob TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddLocation TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddPermission TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRegion TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRole TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRolesPermission TO SuperAdmin;
 
 -- Hak Akses untuk admin
-GRANT SELECT, INSERT, UPDATE ON vw_EmployeeDetails TO admin;
-GRANT EXECUTE ON sp_InsertEmployee TO admin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_account_roles TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_country TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON vw_Department TO SuperAdmin;
+GRANT SELECT, INSERT, UPDATE, DELETE ON dbo.vw_Employee TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddAccountRoles TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddCountry TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddDepartment TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddEmployee TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddJob TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddLocation TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddPermission TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRegion TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRole TO SuperAdmin;
+GRANT EXECUTE ON dbo.AddRolesPermission TO SuperAdmin;
+
 
 -- Hak Akses untuk manager
 GRANT SELECT, UPDATE ON vw_EmployeeDetails TO manager;
@@ -420,14 +444,15 @@ GRANT SELECT, UPDATE ON vw_EmployeeDetails TO manager;
 GRANT UPDATE ON vw_EmployeeDetails TO employee;
 
 -- Langkah 3: Menetapkan Roles ke Pengguna
-ALTER ROLE SuperAdmin ADD MEMBER SANTIPIA;
-ALTER ROLE admin ADD MEMBER SANTIPIA;
-ALTER ROLE manager ADD MEMBER user_manager;
-ALTER ROLE employee ADD MEMBER user_employee;
+ALTER ROLE SuperAdmin ADD MEMBER Johny;
+ALTER ROLE admin ADD MEMBER Zidan;
+ALTER ROLE manager ADD MEMBER Akmal;
+ALTER ROLE employee ADD MEMBER Ragil;
 
 EXECUTE AS USER = 'Akmal';
 EXECUTE AS USER = 'Johny';
 SELECT * from vw_EmployeeDetails;
+SELECT * from vw_country;
 SELECT * from vw_Permission;
 execute EditPermission @id = 1, @name='INSERT';
 SELECT * from tbl_permissions

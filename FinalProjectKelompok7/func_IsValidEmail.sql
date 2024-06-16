@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE FUNCTION IsValidEmail (@email VARCHAR(25))
 RETURNS BIT
 AS

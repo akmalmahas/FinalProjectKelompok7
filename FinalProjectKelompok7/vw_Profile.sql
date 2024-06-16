@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE VIEW vw_Profile AS
 SELECT 
     e.id,

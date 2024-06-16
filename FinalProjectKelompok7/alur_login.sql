@@ -1,5 +1,5 @@
-use db_employee
-go;
+use db_employee;
+go
 
 /*1. membuat akun dengan meng exec AddEmployee dan pastikan data yg diinputkan
 	Masuk ke tbl_employees, tbl_accounts dan tbl_job_histories 

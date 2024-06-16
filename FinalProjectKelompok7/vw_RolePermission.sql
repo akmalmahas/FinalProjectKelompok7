@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE VIEW vw_RolePermission AS
 SELECT 
     rp.id AS role_permission_id,

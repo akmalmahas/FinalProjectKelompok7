@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE PROCEDURE DeleteAccountRoles
     @AccountRoleId INT
 AS

@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE FUNCTION dbo.IsValidPasswordPolicy (@password NVARCHAR(255))
 RETURNS BIT
 AS

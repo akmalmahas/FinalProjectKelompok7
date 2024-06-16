@@ -1,6 +1,9 @@
 --DATABASE
 CREATE DATABASE db_employee;
 
+use db_employee;
+go
+
 --REGIONS
 CREATE TABLE tbl_regions (
 	id INT IDENTITY PRIMARY KEY,

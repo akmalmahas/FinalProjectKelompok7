@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE FUNCTION IsValidGender (@gender VARCHAR(10))
 RETURNS BIT
 AS

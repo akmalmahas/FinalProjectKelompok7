@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE FUNCTION IsValidPhoneNumber (@phone VARCHAR(20))
 RETURNS BIT
 AS

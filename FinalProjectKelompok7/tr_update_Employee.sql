@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE TRIGGER trg_AfterUpdateEmployeeJob
 ON tbl_employees
 AFTER UPDATE

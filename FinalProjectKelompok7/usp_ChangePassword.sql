@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE PROCEDURE ChangePassword
     @email VARCHAR(25),
     @password VARCHAR(225),

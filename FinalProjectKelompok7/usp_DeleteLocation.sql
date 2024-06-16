@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE PROCEDURE DeleteLocation
     @id int
 AS

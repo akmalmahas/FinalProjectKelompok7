@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE PROCEDURE DeleteJob
     @id VARCHAR(10)
 AS

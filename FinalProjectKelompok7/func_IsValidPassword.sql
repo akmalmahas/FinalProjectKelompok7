@@ -1,3 +1,6 @@
+use db_employee;
+go
+
 CREATE FUNCTION IsValidPassword (@password VARCHAR(255), @confirm_password VARCHAR(255))
 RETURNS BIT
 AS

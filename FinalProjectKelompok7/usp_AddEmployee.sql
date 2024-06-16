@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddEmployee
     @first_name VARCHAR(25),
     @last_name VARCHAR(25),

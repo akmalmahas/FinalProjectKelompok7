@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditRole
     @id INT,
     @name VARCHAR(100)

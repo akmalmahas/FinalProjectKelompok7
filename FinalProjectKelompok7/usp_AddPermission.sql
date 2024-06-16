@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddPermission
     @name VARCHAR(100)
 AS

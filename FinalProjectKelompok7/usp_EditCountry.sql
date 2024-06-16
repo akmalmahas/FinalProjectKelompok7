@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditCountry
     @id CHAR(3),
     @name VARCHAR(40) = NULL,

@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE VIEW vw_EmployeeDetails AS
 SELECT 
     e.id AS employee_id,

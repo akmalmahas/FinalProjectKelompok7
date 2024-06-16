@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE VIEW vw_account_roles AS
 SELECT 
     ar.id AS account_role_id,

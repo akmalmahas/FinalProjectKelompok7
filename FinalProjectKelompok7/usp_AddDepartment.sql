@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddDepartment
 	@name VARCHAR(30),
 	@locations INT

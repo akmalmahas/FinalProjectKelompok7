@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddRegion
     @name VARCHAR(25)
 AS

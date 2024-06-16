@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE VIEW vw_country
 AS
 SELECT c.id, 

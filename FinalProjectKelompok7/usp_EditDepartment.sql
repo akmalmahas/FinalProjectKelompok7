@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditDepartment
     @id INT,
     @name VARCHAR(30)= NULL,

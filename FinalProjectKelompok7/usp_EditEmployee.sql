@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditEmployee
     @id INT,
     @first_name VARCHAR(25) = NULL,

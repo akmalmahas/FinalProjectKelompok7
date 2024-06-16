@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddRolesPermission
     @RoleId INT,
     @PermissionId INT

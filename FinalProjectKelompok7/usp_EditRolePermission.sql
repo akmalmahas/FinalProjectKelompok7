@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditRolesPermission
     @RolesPermissionId INT,
     @RoleId INT = NULL,

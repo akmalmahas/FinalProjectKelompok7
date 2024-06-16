@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddJob
     @id VARCHAR(10),
 	@title VARCHAR(35),

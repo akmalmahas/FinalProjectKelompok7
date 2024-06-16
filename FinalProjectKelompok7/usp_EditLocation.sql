@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditLocation
 	@id int,
     @street_address varchar (40)= NULL,

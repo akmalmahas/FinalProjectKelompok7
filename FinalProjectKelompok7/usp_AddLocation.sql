@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddLocation
     @street_address varchar (40),
 	@postal_code Varchar (12),

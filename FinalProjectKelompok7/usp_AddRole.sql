@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE AddRole
     @name VARCHAR(100)
 AS

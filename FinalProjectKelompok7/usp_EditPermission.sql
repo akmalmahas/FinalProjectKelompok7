@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditPermission
     @id INT,
     @name VARCHAR(100)

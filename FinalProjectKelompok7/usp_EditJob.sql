@@ -1,3 +1,6 @@
+USE db_employee;
+GO
+
 CREATE PROCEDURE EditJob
     @id VARCHAR(10),
     @title VARCHAR(35) = NULL,
